@@ -87,14 +87,13 @@ public class ConexionBD {
 		}
 	}
 
-	private boolean consultarDatosBd(String correo, String contrasena) {
+	public boolean consultarDatosBd(String correo) {
 
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs = null;
-		String sql = "";
-		int numero = 0;
-		
+		String query = "";
+
 		boolean encontrado = false;
 
 		try {
@@ -104,17 +103,19 @@ public class ConexionBD {
 
 			sentenciaSQL = conexion.createStatement();
 
-			sql = "SELECT email FROM cliente where email = '" + correo + "'";
+			query = "SELECT * FROM cliente WHERE Email = '" + correo + "';";
+			// query = "SELECT Email FROM `cliente` WHERE Email = '" + correo + "';";
 			// System.out.println(sql);
 
-			rs = sentenciaSQL.executeQuery(sql);
+			rs = sentenciaSQL.executeQuery(query);
 
 			// chequeo que el result set no sea vac�o, moviendo el cursor a la
 			// primer fila. (El cursor inicia antes de la primer fila)
+
 			while (rs.next()) {
 				// Si hay resultados obtengo el valor.
-
-				if (rs.getString("email").equals("")) {
+				System.out.println(rs.getString("Email"));
+				if (rs.getString("Email").equals(correo)) {
 					encontrado = true;
 				} else {
 					encontrado = false;
@@ -139,12 +140,11 @@ public class ConexionBD {
 			}
 
 		}
-		
-		
+
 		if (encontrado) {
-			return false;
-		}else {
 			return true;
+		} else {
+			return false;
 		}
 
 	}
