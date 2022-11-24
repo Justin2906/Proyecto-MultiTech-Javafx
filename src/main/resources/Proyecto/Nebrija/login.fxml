@@ -10,46 +10,46 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1039.0" style="-fx-background-color: #3E4259;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1039.0" style="-fx-background-color: #3E4259;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.LoginController">
    <children>
-      <Pane layoutX="131.0" layoutY="72.0" prefHeight="507.0" prefWidth="778.0" style="-fx-border-color: white; -fx-border-width: 4px;">
+      <Pane layoutX="97.0" layoutY="95.0" prefHeight="584.0" prefWidth="846.0" style="-fx-border-color: white; -fx-border-width: 4px;">
          <children>
-            <Label layoutX="211.0" layoutY="89.0" text="Inicio de Sesión " textFill="WHITE">
+            <Label layoutX="245.0" layoutY="114.0" text="Inicio de Sesión " textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="51.0" />
                </font>
             </Label>
-            <TextField fx:id="txtEmail" layoutX="209.0" layoutY="188.0" prefHeight="57.0" prefWidth="457.0" promptText="Introduzca su Email">
+            <TextField fx:id="txtEmail" layoutX="239.0" layoutY="219.0" prefHeight="57.0" prefWidth="457.0" promptText="Introduzca su Email">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="txtContrasena" layoutX="209.0" layoutY="289.0" prefHeight="57.0" prefWidth="457.0" promptText="Introduzca su Contraseña">
+            <PasswordField fx:id="txtContrasena" layoutX="239.0" layoutY="320.0" prefHeight="57.0" prefWidth="457.0" promptText="Introduzca su Contraseña">
                <font>
                   <Font size="21.0" />
                </font>
             </PasswordField>
-            <Button fx:id="btnEntrar" layoutX="128.0" layoutY="394.0" mnemonicParsing="false" onAction="#logearse" prefHeight="57.0" prefWidth="212.0" style="-fx-background-color: white;" text="Entrar" textFill="#003580">
+            <Button fx:id="btnEntrar" layoutX="158.0" layoutY="425.0" mnemonicParsing="false" onAction="#logearse" prefHeight="57.0" prefWidth="212.0" style="-fx-background-color: white;" text="Entrar" textFill="#003580">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="btnRegistrarse" layoutX="450.0" layoutY="394.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="57.0" prefWidth="212.0" style="-fx-background-color: white;" text="Registrarse" textFill="#003580">
+            <Button fx:id="btnRegistrarse" layoutX="480.0" layoutY="425.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="57.0" prefWidth="212.0" style="-fx-background-color: white;" text="Registrarse" textFill="#003580">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="306.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/usuario.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="66.0" fitWidth="66.0" layoutX="128.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="66.0" fitWidth="66.0" layoutX="158.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/icocno-usuario.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="121.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="151.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/lock.png" />
                </image>
