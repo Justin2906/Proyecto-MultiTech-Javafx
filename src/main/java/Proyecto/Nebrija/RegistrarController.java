@@ -43,7 +43,7 @@ public class RegistrarController {
     void registrarse(ActionEvent event) throws IOException {	
     	ConexionBD conexionBD = new ConexionBD();
     	
-    
+    System.out.println("carlos te quiero, gracias");
 		conexionBD.insertarRegistro(txtNombre.getText(), txtCorreo.getText(), txtContrasena.getText());
 		
 		App.setRoot("login");
