@@ -1,5 +1,6 @@
 package Proyecto.Nebrija;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -9,16 +10,19 @@ import javafx.scene.image.ImageView;
 public class InicioController {
 
     @FXML
-    private Button btnMecanicos;
+    private Button btnDatosPersonales;
 
     @FXML
-    private TextField btnNumProfes;
+    private Button btnServicios;
 
     @FXML
-    private Button btnArtistas;
+    private ImageView imgViewCalendar;
 
     @FXML
-    private ImageView imgDos;
+    private Button btnReservas;
+
+    @FXML
+    private ImageView imgViewDatos;
 
     @FXML
     private ImageView imgViewLogo;
@@ -27,16 +31,37 @@ public class InicioController {
     private TextField btnHabilidad;
 
     @FXML
-    private Button btnActores;
-
-    @FXML
     private DatePicker btnFechaReserva;
 
     @FXML
-    private ImageView imgTres;
+    private Button btnBuscar;
 
     @FXML
-    private ImageView imgUno;
+    private ImageView imgViewServices;
+
+    @FXML
+    private TextField txtNumProfes;
+
+    @FXML
+    void buscar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void misDatos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void serviciosOfrecidos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void misReservas(ActionEvent event) {
+
+    }
 
 }
+
 

@@ -12,47 +12,50 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1039.0" style="-fx-background-color: #3E4259; -fx-border-color: white; -fx-border-width: 6px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.InicioController">
    <children>
-      <ImageView fx:id="imgViewLogo" fitHeight="119.0" fitWidth="194.0" layoutX="474.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgViewLogo" fitHeight="119.0" fitWidth="194.0" layoutX="450.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/logo.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="42.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra el profesionista adecuado para realizar tu trabajo" textAlignment="CENTER" wrappingWidth="954.58154296875">
+      <Text fill="WHITE" layoutX="42.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra el profesionista adecuado para realizar tu trabajo" textAlignment="CENTER" wrappingWidth="954.58154296875">
          <font>
             <Font name="Franklin Gothic Medium" size="55.0" />
          </font>
       </Text>
-      <DatePicker fx:id="btnFechaReserva" layoutX="75.0" layoutY="297.0" prefHeight="63.0" prefWidth="285.0" promptText="Fecha para realizar el trabajo" />
-      <TextField fx:id="txtNumProfes" layoutX="616.0" layoutY="297.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Cuantos Profesionistas?">
+      <DatePicker fx:id="btnFechaReserva" layoutX="75.0" layoutY="653.0" prefHeight="63.0" prefWidth="285.0" promptText="Fecha para realizar el trabajo" />
+      <TextField fx:id="txtNumProfes" layoutX="616.0" layoutY="653.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Cuantos Profesionistas?">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="btnHabilidad" layoutX="360.0" layoutY="297.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Que Habilidad?">
+      <TextField fx:id="btnHabilidad" layoutX="360.0" layoutY="653.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Que Habilidad?">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Text fill="WHITE" layoutX="452.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Explorar" wrappingWidth="170.75">
+      <Button fx:id="btnBuscar" layoutX="872.0" layoutY="653.0" mnemonicParsing="false" onAction="#buscar" prefHeight="63.0" prefWidth="77.0" text="Buscar" />
+      <ImageView fx:id="imgViewCalendar" fitHeight="198.0" fitWidth="224.0" layoutX="90.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/3652267.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgViewDatos" fitHeight="208.0" fitWidth="207.0" layoutX="744.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/1809793.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="237.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Realiza una nueva reserva">
          <font>
-            <Font name="Franklin Gothic Medium" size="47.0" />
+            <Font name="Franklin Gothic Medium" size="50.0" />
          </font>
       </Text>
-      <ImageView fx:id="imgUno" fitHeight="232.0" fitWidth="280.0" layoutX="81.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgViewServices" fitHeight="188.0" fitWidth="198.0" layoutX="425.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/murales-famosos.jpg" />
-         </image></ImageView>
-      <ImageView fx:id="imgTres" fitHeight="232.0" fitWidth="280.0" layoutX="721.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Images/bailarines.png" />
-         </image></ImageView>
-      <ImageView fx:id="imgDos" fitHeight="232.0" fitWidth="267.0" layoutX="417.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Images/teatro.png" />
-         </image></ImageView>
-      <Button fx:id="btnArtistas" layoutX="148.0" layoutY="697.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: white;" text="Artistas" />
-      <Button fx:id="btnMecanicos" layoutX="451.0" layoutY="697.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: white;" text="Actores" />
-      <Button fx:id="btnActores" layoutX="756.0" layoutY="697.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="159.0" style="-fx-background-color: white;" text="Bailarines" />
-      <Button layoutX="872.0" layoutY="297.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="77.0" text="Buscar" />
+            <Image url="@../../Images/1458564.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnDatosPersonales" layoutX="768.0" layoutY="523.0" mnemonicParsing="false" onAction="#misDatos" prefHeight="35.0" prefWidth="160.0" text="Mis Datos " />
+      <Button fx:id="btnServicios" layoutX="439.0" layoutY="523.0" mnemonicParsing="false" onAction="#serviciosOfrecidos" prefHeight="35.0" prefWidth="160.0" text="Servicios Ofrecidos" />
+      <Button fx:id="btnReservas" layoutX="101.0" layoutY="523.0" mnemonicParsing="false" onAction="#misReservas" prefHeight="35.0" prefWidth="160.0" text="Mis Reservas" />
    </children>
 </AnchorPane>
