@@ -17,18 +17,18 @@
             <Image url="@../../Images/logo.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="48.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra el profesionista adecuado para realizar tu trabajo" textAlignment="CENTER" wrappingWidth="954.58154296875">
+      <Text fill="WHITE" layoutX="42.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra el profesionista adecuado para realizar tu trabajo" textAlignment="CENTER" wrappingWidth="954.58154296875">
          <font>
             <Font name="Franklin Gothic Medium" size="55.0" />
          </font>
       </Text>
       <DatePicker fx:id="btnFechaReserva" layoutX="75.0" layoutY="297.0" prefHeight="63.0" prefWidth="285.0" promptText="Fecha para realizar el trabajo" />
-      <TextField fx:id="btnNumProfes" layoutX="707.0" layoutY="297.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Cuantos Profesionistas?" style="-fx-border-color: #003366;">
+      <TextField fx:id="txtNumProfes" layoutX="616.0" layoutY="297.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Cuantos Profesionistas?">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="btnHabilidad" layoutX="409.0" layoutY="297.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Que Habilidad?">
+      <TextField fx:id="btnHabilidad" layoutX="360.0" layoutY="297.0" prefHeight="63.0" prefWidth="256.0" promptText="¿Que Habilidad?">
          <font>
             <Font size="16.0" />
          </font>
@@ -53,5 +53,6 @@
       <Button fx:id="btnArtistas" layoutX="148.0" layoutY="697.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: white;" text="Artistas" />
       <Button fx:id="btnMecanicos" layoutX="451.0" layoutY="697.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: white;" text="Actores" />
       <Button fx:id="btnActores" layoutX="756.0" layoutY="697.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="159.0" style="-fx-background-color: white;" text="Bailarines" />
+      <Button layoutX="872.0" layoutY="297.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="77.0" text="Buscar" />
    </children>
 </AnchorPane>
