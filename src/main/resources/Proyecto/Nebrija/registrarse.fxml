@@ -17,7 +17,7 @@
             <Image url="@../../Images/fondo.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="294.0" layoutY="95.0" opacity="0.52" prefHeight="584.0" prefWidth="454.0" style="-fx-background-color: lightgray; -fx-background-radius: 60px;" />
+      <Pane layoutX="294.0" layoutY="101.0" opacity="0.52" prefHeight="584.0" prefWidth="454.0" style="-fx-background-color: lightgray; -fx-background-radius: 60px;" />
       <Pane prefHeight="781.0" prefWidth="1032.0">
          <children>
             <Button fx:id="btnRegistrar" layoutX="457.0" layoutY="540.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: white;" text="Registrarse" textFill="#003580">
@@ -67,7 +67,7 @@
             </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="446.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="446.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/usuario.png" />
          </image>
