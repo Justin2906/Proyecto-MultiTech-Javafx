@@ -10,45 +10,61 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1039.0" style="-fx-background-color: #3E4259;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.RegistrarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.RegistrarController">
    <children>
-      <Pane layoutX="97.0" layoutY="95.0" prefHeight="584.0" prefWidth="846.0" style="-fx-border-color: white; -fx-border-width: 4px;">
+      <ImageView fitHeight="774.0" fitWidth="1037.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/fondo.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="294.0" layoutY="95.0" opacity="0.52" prefHeight="584.0" prefWidth="454.0" style="-fx-background-color: lightgray; -fx-background-radius: 60px;" />
+      <Pane prefHeight="781.0" prefWidth="1032.0">
          <children>
-            <Button fx:id="btnRegistrar" layoutX="358.0" layoutY="490.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: white;" text="Registrarse" textFill="#003580">
+            <Button fx:id="btnRegistrar" layoutX="457.0" layoutY="540.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: white;" text="Registrarse" textFill="#003580">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Label layoutX="234.0" layoutY="84.0" text="Registrar Usuario" textFill="WHITE">
+            <Label layoutX="368.0" layoutY="188.0" text="Registrar Usuario" textFill="WHITE">
                <font>
-                  <Font name="Franklin Gothic Medium" size="51.0" />
+                  <Font name="Franklin Gothic Medium" size="40.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCorreo" layoutX="207.0" layoutY="223.0" prefHeight="40.0" prefWidth="432.0" promptText="Introduzca su Email">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </TextField>
-            <PasswordField fx:id="txtContrasena" layoutX="207.0" layoutY="356.0" prefHeight="28.0" prefWidth="432.0" promptText="Introduzca su Contraseña">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </PasswordField>
-            <TextField fx:id="txtNombre" layoutX="207.0" layoutY="169.0" prefHeight="40.0" prefWidth="432.0" promptText="Introduzca su Nombre">
+            <TextField fx:id="txtCorreo" alignment="CENTER" layoutX="374.0" layoutY="318.0" prefHeight="27.0" prefWidth="296.0" promptText="Introduzca su Email">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtCorreo2" layoutX="207.0" layoutY="289.0" prefHeight="34.0" prefWidth="432.0" promptText="Repita su Email">
+            <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="374.0" layoutY="427.0" prefHeight="29.0" prefWidth="296.0" promptText="Introduzca su Contraseña">
                <font>
-                  <Font size="21.0" />
-               </font>
-            </TextField>
-            <PasswordField fx:id="txtContrasena2" layoutX="207.0" layoutY="420.0" prefHeight="40.0" prefWidth="432.0" promptText="Repita su Contraseña">
-               <font>
-                  <Font size="21.0" />
+                  <Font size="18.0" />
                </font>
             </PasswordField>
+            <TextField fx:id="txtNombre" alignment="CENTER" layoutX="374.0" layoutY="262.0" prefHeight="29.0" prefWidth="296.0" promptText="Introduzca su Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtCorreo2" alignment="CENTER" layoutX="374.0" layoutY="371.0" prefHeight="16.0" prefWidth="296.0" promptText="Repita su Email">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="txtContrasena2" alignment="CENTER" layoutX="374.0" layoutY="484.0" prefHeight="30.0" prefWidth="296.0" promptText="Repita su Contraseña">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="btnEntrar" layoutX="572.0" layoutY="595.0" mnemonicParsing="false" onAction="#logearse" style="-fx-background-color: transparent;" text="Entrar" textFill="#030854">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="400.0" layoutY="599.0" prefHeight="30.0" prefWidth="196.0" text="Ya tiene una cuenta?" textFill="#003580">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="446.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">

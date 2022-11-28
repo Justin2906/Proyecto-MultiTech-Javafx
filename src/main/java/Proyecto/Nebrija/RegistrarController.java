@@ -11,34 +11,34 @@ import javafx.scene.control.TextField;
 
 public class RegistrarController {
 
-	@FXML
-	private PasswordField txtContrasena2;
+	 @FXML
+	    private PasswordField txtContrasena2;
 
-	@FXML
-	private TextField txtNombre;
+	    @FXML
+	    private TextField txtNombre;
 
-	@FXML
-	private PasswordField txtContrasena;
+	    @FXML
+	    private PasswordField txtContrasena;
 
-	@FXML
-	private TextField txtCorreo2;
+	    @FXML
+	    private TextField txtCorreo2;
 
-	@FXML
-	private Button btnRegistrar;
+	    @FXML
+	    private Button btnRegistrar;
 
-	@FXML
-	private TextField txtCorreo;
+	    @FXML
+	    private TextField txtCorreo;
 
-	@FXML
-	void iniciarSesion(ActionEvent event) throws IOException {
-		App.setRoot("login");
-	}
+	    @FXML
+	    private Button btnEntrar;
 
 	@FXML
 	void registrarse(ActionEvent event) throws IOException {
 		ConexionBD conexionBD = new ConexionBD();
 
-		if (conexionBD.consultarDatosBd(txtCorreo.getText()) == true) {
+		if (validarIntroduccionDatos() == false) {
+			mostrarAlertInfo(event, "debe rellenar todos los campos");
+		} else if (conexionBD.consultarDatosBd(txtCorreo.getText()) == true) {
 			mostrarAlertInfo(event, "El correo que esta introduciendo ya existe");
 		} else if (!txtCorreo.getText().equals(txtCorreo2.getText())) {
 			mostrarAlertInfo(event, "Los correos deben coincidir");
@@ -48,6 +48,21 @@ public class RegistrarController {
 			conexionBD.insertarRegistro(txtNombre.getText().toLowerCase(), txtCorreo.getText().toLowerCase(),
 					txtContrasena.getText().toLowerCase());
 			App.setRoot("login");
+		}
+
+	}
+	
+	 @FXML
+	    void logearse(ActionEvent event) throws IOException {
+		 App.setRoot("login");
+	    }
+
+	private boolean validarIntroduccionDatos() {
+		if (txtNombre.getText().isEmpty() || txtCorreo.getText().isEmpty() || txtCorreo2.getText().isEmpty()
+				|| txtContrasena.getText().isEmpty() || txtContrasena2.getText().isEmpty()) {
+			return false;
+		} else {
+			return true;
 		}
 	}
 

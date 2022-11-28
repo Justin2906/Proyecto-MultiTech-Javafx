@@ -1,16 +1,22 @@
 package Proyecto.Nebrija;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 public class InicioController {
 
-    @FXML
+	@FXML
     private Button btnDatosPersonales;
+
+    @FXML
+    private ComboBox<String> boxHabilidades;
 
     @FXML
     private Button btnServicios;
@@ -28,10 +34,7 @@ public class InicioController {
     private ImageView imgViewLogo;
 
     @FXML
-    private TextField btnHabilidad;
-
-    @FXML
-    private DatePicker btnFechaReserva;
+    private DatePicker txtFechaReserva;
 
     @FXML
     private Button btnBuscar;
@@ -42,26 +45,33 @@ public class InicioController {
     @FXML
     private TextField txtNumProfes;
 
-    @FXML
-    void buscar(ActionEvent event) {
+	@FXML
+	void buscar(ActionEvent event) {
 
-    }
+	}
 
-    @FXML
-    void misDatos(ActionEvent event) {
+	@FXML
+	void misDatos(ActionEvent event) throws IOException {
+		App.setRoot("profile");
+	}
 
-    }
+	@FXML
+	void serviciosOfrecidos(ActionEvent event) {
 
-    @FXML
-    void serviciosOfrecidos(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void misReservas(ActionEvent event) {
 
-    @FXML
-    void misReservas(ActionEvent event) {
-
-    }
+	}
+	
+	//relleno el combobox a pelo para comprobar funcionalidad IMPORTANTE: borrar luegop y rellenar con datos de la base de datos
+	public void initialize() {
+		rellenarComboBox();
+	}
+	
+	private void rellenarComboBox() {
+		boxHabilidades.getItems().addAll("cariñosa", "fontanero", "sexo");
+	}
 
 }
-
-
