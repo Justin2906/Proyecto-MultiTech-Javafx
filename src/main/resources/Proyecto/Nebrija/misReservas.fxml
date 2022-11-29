@@ -27,8 +27,8 @@
       </Text>
       <TableView layoutX="157.0" layoutY="366.0" prefHeight="179.0" prefWidth="718.0" style="-fx-background-radius: 12px 12px; -fx-padding: 5px;">
         <columns>
-          <TableColumn prefWidth="75.0" text="Fecha de la Reserva" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="173.0" text="Fecha de la Reserva" />
+          <TableColumn prefWidth="193.0" text="Numero de Profesionistas" />
         </columns>
       </TableView>
    </children>
