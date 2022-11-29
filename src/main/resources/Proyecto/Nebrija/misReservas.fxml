@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.ReservasController">
    <children>
       <ImageView fitHeight="774.0" fitWidth="1036.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/fondo.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="62.0" layoutY="182.0" opacity="0.52" prefHeight="393.0" prefWidth="922.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px; bac: ;" />
+      <Pane layoutX="62.0" layoutY="182.0" opacity="0.52" prefHeight="504.0" prefWidth="922.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px; bac: ;" />
       <ImageView fitHeight="119.0" fitWidth="194.0" layoutX="452.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/logo.png" />
@@ -25,9 +25,9 @@
             <Font name="Franklin Gothic Medium" size="50.0" />
          </font>
       </Text>
-      <TableView layoutX="157.0" layoutY="366.0" prefHeight="179.0" prefWidth="718.0" style="-fx-background-radius: 40px;">
+      <TableView layoutX="157.0" layoutY="366.0" prefHeight="179.0" prefWidth="718.0" style="-fx-background-radius: 12px 12px; -fx-padding: 5px;">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="Fecha de la Reserva" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>

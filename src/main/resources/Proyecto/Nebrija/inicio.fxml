@@ -28,13 +28,13 @@
             <Font name="Franklin Gothic Medium" size="55.0" />
          </font>
       </Text>
-      <DatePicker fx:id="txtFechaReserva" layoutX="78.0" layoutY="675.0" prefHeight="43.0" prefWidth="285.0" promptText="Fecha para realizar el trabajo" />
-      <TextField fx:id="txtNumProfes" layoutX="619.0" layoutY="675.0" prefHeight="43.0" prefWidth="256.0" promptText="¿Cuantos Profesionistas?">
+      <DatePicker fx:id="txtFechaReserva" layoutX="75.0" layoutY="662.0" prefHeight="43.0" prefWidth="242.0" promptText="Fecha para realizar el trabajo" />
+      <TextField fx:id="txtNumProfes" layoutX="616.0" layoutY="662.0" prefHeight="43.0" prefWidth="223.0" promptText="¿Cuantos Profesionistas?">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btnBuscar" layoutX="875.0" layoutY="675.0" mnemonicParsing="false" onAction="#buscar" prefHeight="43.0" prefWidth="77.0" text="Buscar" />
+      <Button fx:id="btnBuscar" layoutX="872.0" layoutY="662.0" mnemonicParsing="false" onAction="#buscar" prefHeight="43.0" prefWidth="77.0" text="Buscar" />
       <ImageView fx:id="imgViewCalendar" fitHeight="198.0" fitWidth="224.0" layoutX="90.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/calendario.png" />
@@ -58,6 +58,11 @@
       <Button fx:id="btnDatosPersonales" layoutX="768.0" layoutY="523.0" mnemonicParsing="false" onAction="#misDatos" prefHeight="35.0" prefWidth="160.0" text="Mis Datos " />
       <Button fx:id="btnServicios" layoutX="439.0" layoutY="523.0" mnemonicParsing="false" onAction="#serviciosOfrecidos" prefHeight="35.0" prefWidth="160.0" text="Servicios Ofrecidos" />
       <Button fx:id="btnReservas" layoutX="101.0" layoutY="523.0" mnemonicParsing="false" onAction="#misReservas" prefHeight="35.0" prefWidth="160.0" text="Mis Reservas" />
-      <ComboBox fx:id="boxHabilidades" layoutX="363.0" layoutY="675.0" prefHeight="43.0" prefWidth="256.0" promptText="Seleccione una habilidad" style="-fx-background-color: white;" />
+      <ComboBox fx:id="boxHabilidades" layoutX="360.0" layoutY="662.0" prefHeight="43.0" prefWidth="223.0" promptText="Seleccione una habilidad" style="-fx-background-color: white;" />
+      <Label fx:id="camposIncompletos" layoutX="272.0" layoutY="705.0" prefHeight="30.0" prefWidth="494.0" text="Debe rellenar todos los campos para realizar una reserva" textAlignment="CENTER" textFill="#bf1712" visible="false">
+         <font>
+            <Font name="Franklin Gothic Medium" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

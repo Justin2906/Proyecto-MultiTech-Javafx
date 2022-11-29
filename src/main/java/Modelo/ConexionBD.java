@@ -87,13 +87,13 @@ public class ConexionBD {
 		}
 	}
 
-	public boolean consultarDatosBd(String correo) {
+	public boolean consultarEmailBd(String correo) {
 
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs = null;
 		String query = "";
-
+		
 		boolean encontrado = false;
 
 		try {
@@ -115,7 +115,7 @@ public class ConexionBD {
 			while (rs.next()) {
 				// Si hay resultados obtengo el valor.
 				System.out.println(rs.getString("Email"));
-				if (rs.getString("Email").equals(correo)) {
+				if (rs.getString("Email").equals(correo) ) {
 					encontrado = true;
 				} else {
 					encontrado = false;
@@ -148,5 +148,70 @@ public class ConexionBD {
 		}
 
 	}
+	
+	public boolean consultarContrasenaBd(String correo, String contrasena) {
+
+		Connection conexion = null;
+		Statement sentenciaSQL = null;
+		ResultSet rs = null;
+		String query = "";
+		
+		boolean encontrado = false;
+
+		try {
+
+			Class.forName(driver);
+			conexion = DriverManager.getConnection(url + bd, user, password);
+
+			sentenciaSQL = conexion.createStatement();
+
+			query = "SELECT * FROM cliente WHERE Email = '" + correo + "';";
+			// query = "SELECT Email FROM `cliente` WHERE Email = '" + correo + "';";
+			// System.out.println(sql);
+
+			rs = sentenciaSQL.executeQuery(query);
+
+			// chequeo que el result set no sea vac�o, moviendo el cursor a la
+			// primer fila. (El cursor inicia antes de la primer fila)
+
+			while (rs.next()) {
+				// Si hay resultados obtengo el valor.
+				System.out.println(rs.getString("Contraseña"));
+				if (rs.getString("Contraseña").equals(contrasena)) {
+					encontrado = true;
+					System.out.println("las contraseñas coinciden");
+				} else {
+					encontrado = false;
+				}
+
+			}
+
+		} catch (SQLException | ClassNotFoundException ex) {
+			ex.printStackTrace();
+			// System.out.println("Error");
+		} finally {
+			try {
+				if (sentenciaSQL != null) {
+					sentenciaSQL.close();
+				}
+				if (conexion != null) {
+					conexion.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+		if (encontrado) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+	
+	
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -20,49 +21,70 @@
       <Pane layoutX="294.0" layoutY="101.0" opacity="0.52" prefHeight="584.0" prefWidth="454.0" style="-fx-background-color: lightgray; -fx-background-radius: 60px;" />
       <Pane prefHeight="781.0" prefWidth="1032.0">
          <children>
-            <Button fx:id="btnRegistrar" layoutX="457.0" layoutY="540.0" mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: white;" text="Registrarse" textFill="#003580">
+            <Button fx:id="btnRegistrar" layoutX="447.0" layoutY="572.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="30.0" prefWidth="138.0" style="-fx-background-color: white; -fx-padding: 4px;" text="Registrarse" textFill="#003580">
                <font>
-                  <Font size="21.0" />
+                  <Font size="18.0" />
                </font>
             </Button>
-            <Label layoutX="368.0" layoutY="188.0" text="Registrar Usuario" textFill="WHITE">
+            <Label layoutX="368.0" layoutY="171.0" text="Registrar Usuario" textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="40.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCorreo" alignment="CENTER" layoutX="374.0" layoutY="318.0" prefHeight="27.0" prefWidth="296.0" promptText="Introduzca su Email">
+            <TextField fx:id="txtCorreo" alignment="CENTER" layoutX="368.0" layoutY="285.0" prefHeight="27.0" prefWidth="296.0" promptText="Introduzca su Email" style="-fx-padding: 5px;">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="374.0" layoutY="427.0" prefHeight="29.0" prefWidth="296.0" promptText="Introduzca su Contraseña">
+            <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="368.0" layoutY="402.0" prefHeight="29.0" prefWidth="296.0" promptText="Introduzca su Contraseña" style="-fx-padding: 5px;">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </PasswordField>
-            <TextField fx:id="txtNombre" alignment="CENTER" layoutX="374.0" layoutY="262.0" prefHeight="29.0" prefWidth="296.0" promptText="Introduzca su Nombre">
+            <TextField fx:id="txtNombre" alignment="CENTER" layoutX="368.0" layoutY="224.0" prefHeight="30.0" prefWidth="296.0" promptText="Introduzca su Nombre" style="-fx-padding: 5px;">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtCorreo2" alignment="CENTER" layoutX="374.0" layoutY="371.0" prefHeight="16.0" prefWidth="296.0" promptText="Repita su Email">
+            <TextField fx:id="txtCorreo2" alignment="CENTER" layoutX="368.0" layoutY="344.0" prefHeight="16.0" prefWidth="296.0" promptText="Repita su Email" style="-fx-padding: 5px;">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="txtContrasena2" alignment="CENTER" layoutX="374.0" layoutY="484.0" prefHeight="30.0" prefWidth="296.0" promptText="Repita su Contraseña">
+            <PasswordField fx:id="txtContrasena2" alignment="CENTER" layoutX="367.0" layoutY="460.0" prefHeight="30.0" prefWidth="296.0" promptText="Repita su Contraseña" style="-fx-padding: 5px;">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </PasswordField>
-            <Button fx:id="btnEntrar" layoutX="572.0" layoutY="595.0" mnemonicParsing="false" onAction="#logearse" style="-fx-background-color: transparent;" text="Entrar" textFill="#030854">
+            <Button fx:id="btnEntrar" layoutX="573.0" layoutY="613.0" mnemonicParsing="false" onAction="#logearse" style="-fx-background-color: transparent;" text="Entrar" textFill="#030854">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label layoutX="400.0" layoutY="599.0" prefHeight="30.0" prefWidth="196.0" text="Ya tiene una cuenta?" textFill="#003580">
+            <Label layoutX="401.0" layoutY="617.0" prefHeight="30.0" prefWidth="196.0" text="Ya tiene una cuenta?" textFill="#003580">
                <font>
                   <Font name="Franklin Gothic Medium" size="20.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="367.0" layoutY="518.0" prefHeight="35.0" prefWidth="296.0" promptText="Elija sus competencias" style="-fx-background-color: white;" />
+            <Label fx:id="nombreBien" layoutX="430.0" layoutY="259.0" prefHeight="23.0" prefWidth="185.0" text="Debe introducir un nombre" textAlignment="CENTER" textFill="#bf1712" visible="false">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailsBien" layoutX="430.0" layoutY="379.0" prefHeight="23.0" prefWidth="185.0" text="los Emails deben coincidir" textFill="#bf1712" visible="false">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="contrasenasBien" layoutX="409.0" layoutY="495.0" prefHeight="23.0" prefWidth="227.0" text="Las contraseñas deben coincidir" textFill="#bf1712" visible="false">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="correoBdExiste" layoutX="420.0" layoutY="320.0" prefHeight="23.0" prefWidth="206.0" text="El email introducido ya existe" textFill="#bf1712" visible="false">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
                </font>
             </Label>
          </children>

@@ -30,9 +30,9 @@
                   <Image url="@../../Images/usuario.png" />
                </image>
             </ImageView>
-            <TextField fx:id="txtEmail" alignment="CENTER" layoutX="342.0" layoutY="403.0" prefHeight="32.0" prefWidth="348.0" promptText="Introduzca su Email">
+            <TextField fx:id="txtEmail" alignment="CENTER" layoutX="346.0" layoutY="319.0" prefHeight="32.0" prefWidth="348.0" promptText="Introduzca su Email">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </TextField>
             <Button fx:id="btnEntrar" layoutX="445.0" layoutY="468.0" mnemonicParsing="false" onAction="#logearse" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Entrar" textFill="#003580">
@@ -40,12 +40,12 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="342.0" layoutY="345.0" prefHeight="37.0" prefWidth="348.0" promptText="Introduzca su Contraseña">
+            <PasswordField fx:id="txtContrasena" alignment="CENTER" layoutX="346.0" layoutY="387.0" prefHeight="37.0" prefWidth="348.0" promptText="Introduzca su Contraseña">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </PasswordField>
-            <Label layoutX="377.0" layoutY="266.0" text="Inicio de Sesión " textFill="WHITE">
+            <Label layoutX="377.0" layoutY="262.0" text="Inicio de Sesión " textFill="WHITE">
                <font>
                   <Font name="Franklin Gothic Medium" size="40.0" />
                </font>
@@ -60,6 +60,16 @@
                   <Font size="18.0" />
                </font>
             </Button>
+            <Label fx:id="pswdIncorrecta" layoutX="362.0" layoutY="424.0" prefHeight="30.0" prefWidth="308.0" text="La contraseña no coincide con la de la cuenta" textAlignment="CENTER" textFill="#bf1712" visible="false">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="15.5" />
+               </font>
+            </Label>
+            <Label fx:id="emailIncorrecto" layoutX="394.0" layoutY="356.0" prefHeight="30.0" prefWidth="252.0" text="El correo introducido no se encuentra" textAlignment="CENTER" textFill="#bf1712" visible="false">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="15.5" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
