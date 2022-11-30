@@ -21,7 +21,7 @@ public class App extends Application {
     	ConexionBD conexionBD = new ConexionBD();
 		conexionBD.conectar();
 		
-        scene = new Scene(loadFXML("login"));
+        scene = new Scene(loadFXML("inicio"));
         stage.setScene(scene);
         stage.setMaxWidth(1039);
         stage.setMaxHeight(774);

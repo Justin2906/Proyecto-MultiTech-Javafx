@@ -212,6 +212,59 @@ public class ConexionBD {
 
 	}
 	
+	public boolean insertarReserva(String fecha_Reserva, String num_Profes, String habilidad) {
+		Connection conexion = null;
+		Statement sentenciaSQL = null;
+		ResultSet rs;
+		int resultado = 0;
+
+		String sql = "";
+		boolean encontrado = true;
+
+		try {
+			Class.forName(driver);
+
+			conexion = DriverManager.getConnection(url + bd, user, password);
+
+			sentenciaSQL = conexion.createStatement();
+
+			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida) values (0,'" + fecha_Reserva + "','" + num_Profes + "','"
+					+ habilidad + "')";
+
+			resultado = sentenciaSQL.executeUpdate(sql);
+
+			if (resultado >= 1) {
+				System.out.println("Se ha insertado bien.");
+				encontrado = true;
+			}else {
+				encontrado = false;
+			}
+
+		} catch (SQLException | ClassNotFoundException ex) {
+			ex.printStackTrace();
+			// System.out.println("Error");
+		} finally {
+			try {
+				if (sentenciaSQL != null) {
+					sentenciaSQL.close();
+				}
+				if (conexion != null) {
+					conexion.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		
+		if (encontrado) {
+			return true;
+		}else {
+			return false;	
+		}
+	}
+	
 	
 
 }

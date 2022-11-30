@@ -3,6 +3,7 @@ package Proyecto.Nebrija;
 import java.awt.MenuItem;
 import java.io.IOException;
 
+import Modelo.ConexionBD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,13 +17,7 @@ import javafx.scene.image.ImageView;
 public class InicioController {
 
 	@FXML
-	private Button btnDatosPersonales;
-
-	@FXML
 	private ComboBox<String> boxHabilidades;
-
-	@FXML
-	private Button btnServicios;
 
 	@FXML
 	private ImageView imgViewCalendar;
@@ -34,16 +29,28 @@ public class InicioController {
 	private ImageView imgViewDatos;
 
 	@FXML
+	private Label insertBien;
+
+	@FXML
 	private Label camposIncompletos;
 
 	@FXML
 	private ImageView imgViewLogo;
 
 	@FXML
+	private Label insertMal;
+
+	@FXML
+	private Button btnDatosPersonales;
+
+	@FXML
+	private Button btnServicios;
+
+	@FXML
 	private DatePicker txtFechaReserva;
 
 	@FXML
-	private Button btnBuscar;
+	private Button btnResevar;
 
 	@FXML
 	private ImageView imgViewServices;
@@ -52,14 +59,19 @@ public class InicioController {
 	private TextField txtNumProfes;
 
 	@FXML
-	private MenuButton menu;
+	void reservar(ActionEvent event) {
+		ConexionBD conexionBD = new ConexionBD();
+		String fecha = txtFechaReserva.getValue().toString();
 
-	@FXML
-	void buscar(ActionEvent event) {
 		if (txtFechaReserva.getValue() == null || txtNumProfes.getText().isEmpty()
 				|| boxHabilidades.getValue() == null) {
 			camposIncompletos.setVisible(true);
+		} else if (conexionBD.insertarReserva(fecha, txtNumProfes.getText(), boxHabilidades.getValue()) == true) {
+			insertBien.setVisible(true);
+		} else {
+			insertMal.setVisible(true);
 		}
+
 	}
 
 	@FXML
