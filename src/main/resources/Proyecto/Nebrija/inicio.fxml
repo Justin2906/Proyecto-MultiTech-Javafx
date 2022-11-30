@@ -23,7 +23,7 @@
             <Image url="@../../Images/logo.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="42.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra el profesionista adecuado para realizar tu trabajo" textAlignment="CENTER" wrappingWidth="954.58154296875">
+      <Text fill="WHITE" layoutX="47.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encuentra el profesionista adecuado para realizar tu trabajo" textAlignment="CENTER" wrappingWidth="954.58154296875">
          <font>
             <Font name="Franklin Gothic Medium" size="55.0" />
          </font>

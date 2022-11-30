@@ -1,8 +1,6 @@
 package Proyecto.Nebrija;
 
-import java.awt.MenuItem;
 import java.io.IOException;
-
 import Modelo.ConexionBD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
