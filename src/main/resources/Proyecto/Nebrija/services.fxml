@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -20,7 +21,7 @@
       </ImageView>
       <Pane layoutX="134.0" layoutY="215.0" opacity="0.52" prefHeight="473.0" prefWidth="324.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px;" />
       <Pane layoutX="576.0" layoutY="215.0" opacity="0.52" prefHeight="473.0" prefWidth="324.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px;" />
-      <Pane prefHeight="777.0" prefWidth="1036.0">
+      <Pane layoutX="-4.0" layoutY="21.0" prefHeight="777.0" prefWidth="1036.0">
          <children>
             <Text fill="WHITE" layoutX="228.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes">
                <font>
@@ -42,6 +43,7 @@
                   <Font name="Franklin Gothic Medium" size="35.0" />
                </font>
             </Text>
+            <Button fx:id="gb" layoutX="71.0" layoutY="62.0" mnemonicParsing="false" onAction="#goback" prefHeight="43.0" prefWidth="62.0" text="Volver" />
          </children>
       </Pane>
    </children>

@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.ReservasController">
    <children>
-      <ImageView fitHeight="774.0" fitWidth="1036.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="774.0" fitWidth="1036.0" layoutX="-2.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/fondo.jpg" />
          </image>
@@ -49,6 +49,6 @@
             <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="gb" layoutX="62.0" layoutY="45.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="62.0" text="Volver" />
+      <Button fx:id="gb" layoutX="62.0" layoutY="45.0" mnemonicParsing="false" onAction="#goback" prefHeight="43.0" prefWidth="62.0" text="Volver" />
    </children>
 </AnchorPane>

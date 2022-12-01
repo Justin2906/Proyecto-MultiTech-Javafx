@@ -1,5 +1,6 @@
 package Proyecto.Nebrija;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -58,6 +59,9 @@ public class ReservasController {
 	
 	@FXML
     private TableColumn<Reservas, String> clmId;
+	
+    @FXML
+    private Button gb;
 
 	private ConexionBD conexionBD = new ConexionBD();
 
@@ -73,7 +77,6 @@ public class ReservasController {
 	void modificarRegistro(ActionEvent event) {
 		Reservas reservas = new Reservas(Reservas.llenarInformacionReservas(conexionBD.conectar(), lista), txtFechaReservaUp.getValue().toString(), txtNumProfesUp.getText(),
 				boxHabilidadesUp.getValue());
-
 		int resultado = actualizarRegistro(conexionBD.conectar());
 
 		if (resultado == 1) {
@@ -122,5 +125,10 @@ public class ReservasController {
 			return 0;
 		}
 	}
+	
+	@FXML
+    void goback(ActionEvent event) throws IOException {
+		App.setRoot("inicio");
+    }
 
 }
