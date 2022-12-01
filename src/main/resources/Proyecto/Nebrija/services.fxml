@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.Nebrija.ServicesController">
+   <children>
+      <ImageView fitHeight="794.0" fitWidth="1036.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/fondo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="194.0" layoutX="452.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/logo.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="134.0" layoutY="215.0" opacity="0.52" prefHeight="473.0" prefWidth="324.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px;" />
+      <Pane layoutX="576.0" layoutY="215.0" opacity="0.52" prefHeight="473.0" prefWidth="324.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px;" />
+      <Pane prefHeight="777.0" prefWidth="1036.0">
+         <children>
+            <Text fill="WHITE" layoutX="228.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="630.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profesionista">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="158.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La app tendra una opcion para todas aquellas personas que deseen contratar Profesionistas que se adecuen al puesto de trabajo que ofrece" textAlignment="CENTER" wrappingWidth="276.90234375">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="35.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="604.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se dispondra tambien de un apartado de darse de alta como profesionista para ser contratado" textAlignment="CENTER" wrappingWidth="276.90234375">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="35.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

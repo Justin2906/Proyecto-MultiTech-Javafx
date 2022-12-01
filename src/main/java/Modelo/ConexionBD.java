@@ -71,7 +71,7 @@ public class ConexionBD {
 		} catch (SQLException | ClassNotFoundException ex) {
 			ex.printStackTrace();
 			// System.out.println("Error");
-		} finally {
+		} finally { 
 			try {
 				if (sentenciaSQL != null) {
 					sentenciaSQL.close();

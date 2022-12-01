@@ -27,13 +27,14 @@
       </Text>
       <TableView fx:id="listaReservas" layoutX="157.0" layoutY="366.0" prefHeight="179.0" prefWidth="718.0" style="-fx-background-radius: 12px 12px; -fx-padding: 5px;">
         <columns>
-          <TableColumn prefWidth="239.33" text="Fecha de la Reserva" />
-          <TableColumn prefWidth="239.33" text="Numero de Profesionistas" />
-            <TableColumn prefWidth="239.33" text="Habilidad " />
+            <TableColumn fx:id="clmId" prefWidth="179.5" text="Id Reserva" />
+          <TableColumn fx:id="clmFecha" prefWidth="179.5" text="Fecha de la Reserva" />
+          <TableColumn fx:id="clmNum" prefWidth="179.5" text="Nº Profesionistas" />
+            <TableColumn fx:id="clmHabilidad" prefWidth="179.5" text="Habilidad " />
         </columns>
       </TableView>
       <ComboBox fx:id="boxHabilidadesUp" layoutX="602.0" layoutY="620.0" prefHeight="43.0" prefWidth="179.0" promptText="Seleccione una habilidad" style="-fx-background-color: white;" visible="false" />
-      <Button fx:id="btnModificarRegistro" layoutX="798.0" layoutY="620.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="77.0" text="modificar" visible="false" />
+      <Button fx:id="btnModificarRegistro" layoutX="798.0" layoutY="620.0" mnemonicParsing="false" onAction="#modificarRegistro" prefHeight="43.0" prefWidth="77.0" text="modificar" visible="false" />
       <TextField fx:id="txtNumProfesUp" layoutX="385.0" layoutY="620.0" prefHeight="43.0" prefWidth="199.0" promptText="¿Cuantos Profesionistas?" visible="false">
          <font>
             <Font size="16.0" />
@@ -48,5 +49,6 @@
             <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Label>
+      <Button fx:id="gb" layoutX="62.0" layoutY="45.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="62.0" text="Volver" />
    </children>
 </AnchorPane>

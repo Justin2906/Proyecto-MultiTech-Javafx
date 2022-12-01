@@ -2,6 +2,8 @@ package Proyecto.Nebrija;
 
 import java.io.IOException;
 import Modelo.ConexionBD;
+import Modelo.Reservas;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -54,6 +56,8 @@ public class InicioController {
 
 	@FXML
 	private TextField txtNumProfes;
+	
+	private ObservableList<Reservas> lista;
 
 	@FXML
 	void reservar(ActionEvent event) {
@@ -77,8 +81,8 @@ public class InicioController {
 	}
 
 	@FXML
-	void serviciosOfrecidos(ActionEvent event) {
-
+	void serviciosOfrecidos(ActionEvent event) throws IOException {
+		App.setRoot("services");
 	}
 
 	@FXML
@@ -96,4 +100,6 @@ public class InicioController {
 		boxHabilidades.getItems().addAll("cariñosa", "fontanero", "sexo");
 
 	}
+	
+
 }

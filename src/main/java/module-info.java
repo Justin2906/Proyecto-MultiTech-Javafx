@@ -8,4 +8,5 @@ module Proyecto.Nebrija {
 
     opens Proyecto.Nebrija to javafx.fxml;
     exports Proyecto.Nebrija;
+    exports Modelo;
 }
