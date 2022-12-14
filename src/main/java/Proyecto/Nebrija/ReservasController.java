@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+
 import Modelo.ConexionBD;
 import Modelo.Reservas;
 import javafx.collections.FXCollections;
@@ -14,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -22,6 +27,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class ReservasController {
+
+	@FXML
+	private Label mensajeDelete;
 
 	@FXML
 	private TableView<Reservas> listaReservas;
@@ -64,45 +72,60 @@ public class ReservasController {
 	@FXML
 	private Button gb;
 
+	@FXML
+	private TextField txtIdUp;
+
 	private ConexionBD conexionBD = new ConexionBD();
 
 	@FXML
+	void getItem() {
+		listaReservas.onMouseClickedProperty().set(event -> {
+			Reservas selectReservas = listaReservas.getSelectionModel().getSelectedItem();
+			if (selectReservas != null) {
+				txtIdUp.setText(String.valueOf(selectReservas.getId()));
+				txtFechaReservaUp.setValue(LocalDate.parse(selectReservas.getFechaReserva()));
+				txtNumProfesUp.setText(selectReservas.getNumProfesionistas().toString());
+				boxHabilidadesUp.setValue(selectReservas.getHabilidad().toString());
+			}
+		});
+	}
+
+	@FXML
 	void update(ActionEvent event) {
-		txtFechaReservaUp.setVisible(true);
-		txtNumProfesUp.setVisible(true);
-		boxHabilidadesUp.setVisible(true);
-		btnModificarRegistro.setVisible(true);
-	}
+		ConexionBD conexionBD = new ConexionBD();
 
-	@FXML
-	void getItem(MouseEvent event) {
-		Reservas selectReservas = listaReservas.getSelectionModel().getSelectedItem();
-		if (selectReservas != null) {
-			//txtFechaReservaUp.setValue(selectReservas.getFechaReserva());
-			txtNumProfesUp.setText(selectReservas.getNumProfesionistas().toString());
-		}
-	}
+		Reservas r = new Reservas(Integer.valueOf(txtIdUp.getText()), txtFechaReservaUp.getValue().toString(),
+				txtNumProfesUp.getText(), boxHabilidadesUp.getValue().toString());
 
-	@FXML
-	void modificarRegistro(ActionEvent event) {
-		Reservas reservas = new Reservas(Reservas.llenarInformacionReservas(conexionBD.conectar(), lista),
-				txtFechaReservaUp.getValue().toString(), txtNumProfesUp.getText(), boxHabilidadesUp.getValue());
-		int resultado = actualizarRegistro(conexionBD.conectar());
+		int resultado = r.actualizarRegistro(conexionBD.conectar());
 
 		if (resultado == 1) {
-			lista.set(listaReservas.getSelectionModel().getSelectedIndex(), reservas);
+			lista.set(listaReservas.getSelectionModel().getSelectedIndex(), r);
+			System.out.println("Actualizado correctamente");
 		}
 
 	}
 
 	@FXML
 	void delete(ActionEvent event) {
+		ConexionBD conexionBD = new ConexionBD();
 
+		int resultado = listaReservas.getSelectionModel().getSelectedItem().eliminarRegistro(conexionBD.conectar());
+
+		if (resultado == 1) {
+			lista.remove(listaReservas.getSelectionModel().getSelectedIndex());
+			System.out.println("Elimando correctamente");
+		}
 	}
 
 	@FXML
 	void search(ActionEvent event) {
 
+	}
+
+	@FXML
+	void goback(ActionEvent event) throws IOException {
+		App.setRoot("inicio");
 	}
 
 	public void initialize() {
@@ -118,27 +141,14 @@ public class ReservasController {
 		clmFecha.setCellValueFactory(new PropertyValueFactory<Reservas, String>("fechaReserva"));
 		clmNum.setCellValueFactory(new PropertyValueFactory<Reservas, String>("numProfesionistas"));
 		clmHabilidad.setCellValueFactory(new PropertyValueFactory<Reservas, String>("habilidad"));
+		
+		rellenarComboBox();
 	}
 
-	public int actualizarRegistro(Connection connection) {
-		try {
-			PreparedStatement instruccion = connection.prepareStatement(
-					"update reservas set id = ?, Fecha_Reserva = ?, Num_profesionistas = ?, Habilidad_Requerida = ? where id = ?");
-			instruccion.setInt(1, 2);
-			instruccion.setString(2, txtFechaReservaUp.getValue().toString());
-			instruccion.setString(3, txtNumProfesUp.getText());
-			instruccion.setString(4, boxHabilidadesUp.getValue());
-			instruccion.setInt(5, 1);
+	private void rellenarComboBox() {
+		boxHabilidadesUp.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas",
+				"Diseñador de Vestuario", "Ebanista");
 
-			return instruccion.executeUpdate();
-		} catch (SQLException e) {
-			return 0;
-		}
-	}
-
-	@FXML
-	void goback(ActionEvent event) throws IOException {
-		App.setRoot("inicio");
 	}
 
 }

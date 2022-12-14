@@ -97,7 +97,7 @@ public class InicioController {
 	}
 
 	private void rellenarComboBox() {
-		boxHabilidades.getItems().addAll("cariñosa", "fontanero", "sexo");
+		boxHabilidades.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas", "Diseñador de Vestuario", "Ebanista");
 
 	}
 	

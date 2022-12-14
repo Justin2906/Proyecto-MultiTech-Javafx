@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -53,9 +54,8 @@ public class Reservas {
 		this.habilidad = habilidad;
 	}
 
-	public static int llenarInformacionReservas(Connection connection,ObservableList<Reservas> lista) {
+	public static void llenarInformacionReservas(Connection connection,ObservableList<Reservas> lista) {
 		String  sql = "";
-		int id=0;
 		try {
 			Statement instruccion = connection.createStatement();
 			sql = "select id, Fecha_Reserva, Num_profesionistas, Habilidad_Requerida from reservas";
@@ -67,9 +67,34 @@ public class Reservas {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}		
-		return id;
 	}
 	
+	public int actualizarRegistro(Connection connection) {
+		try {
+			PreparedStatement instruccion = connection.prepareStatement(
+					"update reservas set id = ?, Fecha_Reserva = ?, Num_profesionistas = ?, Habilidad_Requerida = ? where id = ?");
+			instruccion.setInt(1, getId());
+			instruccion.setString(2, getFechaReserva());
+			instruccion.setString(3, getNumProfesionistas());
+			instruccion.setString(4, getHabilidad());
+			instruccion.setInt(5, getId());
+
+			return instruccion.executeUpdate();
+		} catch (SQLException e) {
+			return 0;
+		}
+	}
+	
+	public int eliminarRegistro(Connection connection) {
+		try {
+			PreparedStatement instruccion = connection.prepareStatement("DELETE FROM reservas WHERE id = ?");
+			instruccion.setInt(1, getId());
+			return instruccion.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
 	
 	
 	

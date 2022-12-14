@@ -29,6 +29,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Rondo/eclipse-workspace/librerias/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar"/>
+	<classpathentry kind="lib" path="D:/eclipse/librerias/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
