@@ -8,12 +8,12 @@ import java.sql.ResultSet;
 import javafx.collections.ObservableList;
 
 public class Reservas {
-	
+
 	private int id;
 	private String fechaReserva;
 	private String numProfesionistas;
 	private String habilidad;
-	
+
 	public Reservas(int id, String fechaReserva, String numProfesionistas, String habilidad) {
 		super();
 		this.id = id;
@@ -21,7 +21,7 @@ public class Reservas {
 		this.numProfesionistas = numProfesionistas;
 		this.habilidad = habilidad;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -54,21 +54,22 @@ public class Reservas {
 		this.habilidad = habilidad;
 	}
 
-	public static void llenarInformacionReservas(Connection connection,ObservableList<Reservas> lista) {
-		String  sql = "";
+	public static void llenarInformacionReservas(Connection connection, ObservableList<Reservas> lista) {
+		String sql = "";
 		try {
 			Statement instruccion = connection.createStatement();
 			sql = "select id, Fecha_Reserva, Num_profesionistas, Habilidad_Requerida from reservas";
 			ResultSet resultado = instruccion.executeQuery(sql);
-			
+
 			while (resultado.next()) {
-				lista.add(new Reservas(resultado.getInt("id"),resultado.getString("Fecha_Reserva"), resultado.getString("Num_profesionistas"), resultado.getString("Habilidad_Requerida")));
+				lista.add(new Reservas(resultado.getInt("id"), resultado.getString("Fecha_Reserva"),
+						resultado.getString("Num_profesionistas"), resultado.getString("Habilidad_Requerida")));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	
+
 	public int actualizarRegistro(Connection connection) {
 		try {
 			PreparedStatement instruccion = connection.prepareStatement(
@@ -84,7 +85,7 @@ public class Reservas {
 			return 0;
 		}
 	}
-	
+
 	public int eliminarRegistro(Connection connection) {
 		try {
 			PreparedStatement instruccion = connection.prepareStatement("DELETE FROM reservas WHERE id = ?");
@@ -95,9 +96,5 @@ public class Reservas {
 			return 0;
 		}
 	}
-	
-	
-	
-	
-	
+
 }

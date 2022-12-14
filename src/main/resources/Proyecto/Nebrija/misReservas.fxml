@@ -54,6 +54,10 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <DatePicker fx:id="buscasReserva" layoutX="409.0" layoutY="703.0" prefHeight="43.0" prefWidth="246.0" promptText="Buscar Reserva por la fecha" />
+      <TextField fx:id="busqueda" layoutX="432.0" layoutY="695.0" prefHeight="43.0" prefWidth="199.0" promptText="¿Cuantos Profesionistas?">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

@@ -8,12 +8,12 @@ import javafx.scene.control.Button;
 
 public class ProfileController {
 
-    @FXML
-    private Button gb;
+	@FXML
+	private Button gb;
 
-    @FXML
-    void goback(ActionEvent event) throws IOException {
-    	App.setRoot("inicio");
-    }
+	@FXML
+	void goback(ActionEvent event) throws IOException {
+		App.setRoot("inicio");
+	}
 
 }

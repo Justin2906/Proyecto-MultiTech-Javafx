@@ -13,37 +13,37 @@ import javafx.scene.control.TextField;
 public class RegistrarController {
 
 	@FXML
-    private PasswordField txtContrasena2;
+	private PasswordField txtContrasena2;
 
-    @FXML
-    private TextField txtNombre;
+	@FXML
+	private TextField txtNombre;
 
-    @FXML
-    private Label correoBdExiste;
-    
-    @FXML
-    private PasswordField txtContrasena;
+	@FXML
+	private Label correoBdExiste;
 
-    @FXML
-    private TextField txtCorreo2;
+	@FXML
+	private PasswordField txtContrasena;
 
-    @FXML
-    private Label contrasenasBien;
+	@FXML
+	private TextField txtCorreo2;
 
-    @FXML
-    private Label emailsBien;
+	@FXML
+	private Label contrasenasBien;
 
-    @FXML
-    private Button btnRegistrar;
+	@FXML
+	private Label emailsBien;
 
-    @FXML
-    private Label nombreBien;
+	@FXML
+	private Button btnRegistrar;
 
-    @FXML
-    private TextField txtCorreo;
+	@FXML
+	private Label nombreBien;
 
-    @FXML
-    private Button btnEntrar;
+	@FXML
+	private TextField txtCorreo;
+
+	@FXML
+	private Button btnEntrar;
 
 	@FXML
 	void registrarse(ActionEvent event) throws IOException {
@@ -51,9 +51,9 @@ public class RegistrarController {
 
 		if (txtNombre.getText().isEmpty()) {
 			nombreBien.setVisible(true);
-		}else if (!txtCorreo.getText().equals(txtCorreo2.getText())) {
+		} else if (!txtCorreo.getText().equals(txtCorreo2.getText())) {
 			emailsBien.setVisible(true);
-		}else if (!txtContrasena.getText().equals(txtContrasena2.getText())) {
+		} else if (!txtContrasena.getText().equals(txtContrasena2.getText())) {
 			contrasenasBien.setVisible(true);
 		} else if (conexionBD.consultarEmailBd(txtCorreo.getText()) == true) {
 			correoBdExiste.setVisible(true);

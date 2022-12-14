@@ -1,6 +1,7 @@
 package Proyecto.Nebrija;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,11 +9,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 import Modelo.ConexionBD;
 import Modelo.Reservas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -56,7 +60,7 @@ public class ReservasController {
 	private TextField txtNumProfesUp;
 
 	private ObservableList<Reservas> lista;
-	
+
 	private ObservableList<Reservas> listaAux;
 
 	@FXML
@@ -78,7 +82,7 @@ public class ReservasController {
 	private TextField txtIdUp;
 
 	@FXML
-	private DatePicker buscasReserva;
+	private TextField busqueda;
 
 	private ConexionBD conexionBD = new ConexionBD();
 
@@ -125,8 +129,7 @@ public class ReservasController {
 
 	@FXML
 	void search(ActionEvent event) {
-		
-		
+
 	}
 
 	@FXML
@@ -135,21 +138,66 @@ public class ReservasController {
 	}
 
 	public void initialize() {
-			listaReservas.setEditable(true);
+		rellenarComboBox();
 
-			ConexionBD conexionBD = new ConexionBD();
+		// declaro que la lista puede ser editada
+		listaReservas.setEditable(true);
 
-			lista = FXCollections.observableArrayList();
-			Reservas.llenarInformacionReservas(conexionBD.conectar(), lista);
-			listaReservas.setItems(lista);
+		ConexionBD conexionBD = new ConexionBD();
 
-			clmId.setCellValueFactory(new PropertyValueFactory<Reservas, String>("id"));
-			clmFecha.setCellValueFactory(new PropertyValueFactory<Reservas, String>("fechaReserva"));
-			clmNum.setCellValueFactory(new PropertyValueFactory<Reservas, String>("numProfesionistas"));
-			clmHabilidad.setCellValueFactory(new PropertyValueFactory<Reservas, String>("habilidad"));
+		// añado los elementos de 'lista' al tableView
+		lista = FXCollections.observableArrayList();
+		Reservas.llenarInformacionReservas(conexionBD.conectar(), lista);
+		listaReservas.setItems(lista);
 
-			rellenarComboBox();
-		
+		// añado los elementos de cada registro en sus respectivas columnas
+		clmId.setCellValueFactory(new PropertyValueFactory<Reservas, String>("id"));
+		clmFecha.setCellValueFactory(new PropertyValueFactory<Reservas, String>("fechaReserva"));
+		clmNum.setCellValueFactory(new PropertyValueFactory<Reservas, String>("numProfesionistas"));
+		clmHabilidad.setCellValueFactory(new PropertyValueFactory<Reservas, String>("habilidad"));
+
+		// envuelvo el obLista en una fList para al principio, si no busca nada, mostrar
+		// todos los datos en la tabla
+		FilteredList<Reservas> filteredList = new FilteredList<>(lista, b -> true);
+
+		// añado un predicado al filtro para que reciba cambios
+		busqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+			filteredList.setPredicate(reserva -> {
+
+				// si el campo de busqueda esta vacio, muestro todos los registros
+				if (newValue == null || newValue.isEmpty()) {
+					return true;
+				}
+
+				// lo paso a lowerCase para mejor busqueda
+				String lowerCaseFilter = newValue.toLowerCase();
+
+				// filtro la lista dependiendo de lo que introduzca en el campo busqueda (recibe
+				// los datos de los registros)
+				if (reserva.getNumProfesionistas().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true;// si es diferente de -1 devuelvo un true a la lambda
+				} else if (reserva.getHabilidad().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true;
+				} else if (reserva.getFechaReserva().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true;
+				} else if (reserva.getFechaReserva().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+					return true;
+				}else {
+					return false;
+				}
+
+			});
+		});
+
+		// envuelvo el filtro una lista ordenada, dependiendo de la busqueda realizada
+		SortedList<Reservas> sortedList = new SortedList<>(filteredList);
+
+		// uno la lista ordenada con el tableView para poder filtrar la busqueda
+		sortedList.comparatorProperty().bind(listaReservas.comparatorProperty());
+
+		// paso la lista ordenada y filtrada al tableview para que se actualice
+		// dependiendo de los buscado
+		listaReservas.setItems(sortedList);
 	}
 
 	private void rellenarComboBox() {

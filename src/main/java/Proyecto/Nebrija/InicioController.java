@@ -56,7 +56,7 @@ public class InicioController {
 
 	@FXML
 	private TextField txtNumProfes;
-	
+
 	private ObservableList<Reservas> lista;
 
 	@FXML
@@ -97,9 +97,9 @@ public class InicioController {
 	}
 
 	private void rellenarComboBox() {
-		boxHabilidades.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas", "Diseñador de Vestuario", "Ebanista");
+		boxHabilidades.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas",
+				"Diseñador de Vestuario", "Ebanista");
 
 	}
-	
 
 }

@@ -14,32 +14,32 @@ import Modelo.ConexionBD;
  */
 public class App extends Application {
 
-    private static Scene scene;
+	private static Scene scene;
 
-    @Override
-    public void start(Stage stage) throws IOException {
-    	ConexionBD conexionBD = new ConexionBD();
+	@Override
+	public void start(Stage stage) throws IOException {
+		ConexionBD conexionBD = new ConexionBD();
 		conexionBD.conectar();
-		
-        scene = new Scene(loadFXML("inicio"));
-        stage.setScene(scene);
-        stage.setMaxWidth(1039);
-        stage.setMaxHeight(774);
-        stage.show();
-        stage.setTitle("ShowSkills");
-    }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+		scene = new Scene(loadFXML("inicio"));
+		stage.setScene(scene);
+		stage.setMaxWidth(1039);
+		stage.setMaxHeight(774);
+		stage.show();
+		stage.setTitle("ShowSkills");
+	}
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
+	static void setRoot(String fxml) throws IOException {
+		scene.setRoot(loadFXML(fxml));
+	}
 
-    public static void main(String[] args) {
-        launch();
-    }
+	private static Parent loadFXML(String fxml) throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+		return fxmlLoader.load();
+	}
+
+	public static void main(String[] args) {
+		launch();
+	}
 
 }

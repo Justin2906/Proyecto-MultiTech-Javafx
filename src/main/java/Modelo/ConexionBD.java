@@ -71,7 +71,7 @@ public class ConexionBD {
 		} catch (SQLException | ClassNotFoundException ex) {
 			ex.printStackTrace();
 			// System.out.println("Error");
-		} finally { 
+		} finally {
 			try {
 				if (sentenciaSQL != null) {
 					sentenciaSQL.close();
@@ -93,7 +93,7 @@ public class ConexionBD {
 		Statement sentenciaSQL = null;
 		ResultSet rs = null;
 		String query = "";
-		
+
 		boolean encontrado = false;
 
 		try {
@@ -115,7 +115,7 @@ public class ConexionBD {
 			while (rs.next()) {
 				// Si hay resultados obtengo el valor.
 				System.out.println(rs.getString("Email"));
-				if (rs.getString("Email").equals(correo) ) {
+				if (rs.getString("Email").equals(correo)) {
 					encontrado = true;
 				} else {
 					encontrado = false;
@@ -148,14 +148,14 @@ public class ConexionBD {
 		}
 
 	}
-	
+
 	public boolean consultarContrasenaBd(String correo, String contrasena) {
 
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs = null;
 		String query = "";
-		
+
 		boolean encontrado = false;
 
 		try {
@@ -211,7 +211,7 @@ public class ConexionBD {
 		}
 
 	}
-	
+
 	public boolean insertarReserva(String fecha_Reserva, String num_Profes, String habilidad) {
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
@@ -228,15 +228,15 @@ public class ConexionBD {
 
 			sentenciaSQL = conexion.createStatement();
 
-			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida) values (0,'" + fecha_Reserva + "','" + num_Profes + "','"
-					+ habilidad + "')";
+			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida) values (0,'"
+					+ fecha_Reserva + "','" + num_Profes + "','" + habilidad + "')";
 
 			resultado = sentenciaSQL.executeUpdate(sql);
 
 			if (resultado >= 1) {
 				System.out.println("Se ha insertado bien.");
 				encontrado = true;
-			}else {
+			} else {
 				encontrado = false;
 			}
 
@@ -257,14 +257,12 @@ public class ConexionBD {
 			}
 
 		}
-		
+
 		if (encontrado) {
 			return true;
-		}else {
-			return false;	
+		} else {
+			return false;
 		}
 	}
-	
-	
 
 }
