@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import Modelo.ConexionBD;
 import Modelo.Reservas;
 import javafx.collections.FXCollections;
@@ -19,6 +18,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 public class ReservasController {
 
@@ -56,12 +57,12 @@ public class ReservasController {
 
 	@FXML
 	private TableColumn<Reservas, String> clmNum;
-	
+
 	@FXML
-    private TableColumn<Reservas, String> clmId;
-	
-    @FXML
-    private Button gb;
+	private TableColumn<Reservas, String> clmId;
+
+	@FXML
+	private Button gb;
 
 	private ConexionBD conexionBD = new ConexionBD();
 
@@ -74,9 +75,18 @@ public class ReservasController {
 	}
 
 	@FXML
+	void getItem(MouseEvent event) {
+		Reservas selectReservas = listaReservas.getSelectionModel().getSelectedItem();
+		if (selectReservas != null) {
+			//txtFechaReservaUp.setValue(selectReservas.getFechaReserva());
+			txtNumProfesUp.setText(selectReservas.getNumProfesionistas().toString());
+		}
+	}
+
+	@FXML
 	void modificarRegistro(ActionEvent event) {
-		Reservas reservas = new Reservas(Reservas.llenarInformacionReservas(conexionBD.conectar(), lista), txtFechaReservaUp.getValue().toString(), txtNumProfesUp.getText(),
-				boxHabilidadesUp.getValue());
+		Reservas reservas = new Reservas(Reservas.llenarInformacionReservas(conexionBD.conectar(), lista),
+				txtFechaReservaUp.getValue().toString(), txtNumProfesUp.getText(), boxHabilidadesUp.getValue());
 		int resultado = actualizarRegistro(conexionBD.conectar());
 
 		if (resultado == 1) {
@@ -87,7 +97,7 @@ public class ReservasController {
 
 	@FXML
 	void delete(ActionEvent event) {
-		
+
 	}
 
 	@FXML
@@ -97,7 +107,7 @@ public class ReservasController {
 
 	public void initialize() {
 		listaReservas.setEditable(true);
-		
+
 		ConexionBD conexionBD = new ConexionBD();
 
 		lista = FXCollections.observableArrayList();
@@ -125,10 +135,10 @@ public class ReservasController {
 			return 0;
 		}
 	}
-	
+
 	@FXML
-    void goback(ActionEvent event) throws IOException {
+	void goback(ActionEvent event) throws IOException {
 		App.setRoot("inicio");
-    }
+	}
 
 }
