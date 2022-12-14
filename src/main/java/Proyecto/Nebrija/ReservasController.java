@@ -56,6 +56,8 @@ public class ReservasController {
 	private TextField txtNumProfesUp;
 
 	private ObservableList<Reservas> lista;
+	
+	private ObservableList<Reservas> listaAux;
 
 	@FXML
 	private TableColumn<Reservas, String> clmHabilidad;
@@ -74,6 +76,9 @@ public class ReservasController {
 
 	@FXML
 	private TextField txtIdUp;
+
+	@FXML
+	private DatePicker buscasReserva;
 
 	private ConexionBD conexionBD = new ConexionBD();
 
@@ -120,7 +125,8 @@ public class ReservasController {
 
 	@FXML
 	void search(ActionEvent event) {
-
+		
+		
 	}
 
 	@FXML
@@ -129,20 +135,21 @@ public class ReservasController {
 	}
 
 	public void initialize() {
-		listaReservas.setEditable(true);
+			listaReservas.setEditable(true);
 
-		ConexionBD conexionBD = new ConexionBD();
+			ConexionBD conexionBD = new ConexionBD();
 
-		lista = FXCollections.observableArrayList();
-		Reservas.llenarInformacionReservas(conexionBD.conectar(), lista);
-		listaReservas.setItems(lista);
+			lista = FXCollections.observableArrayList();
+			Reservas.llenarInformacionReservas(conexionBD.conectar(), lista);
+			listaReservas.setItems(lista);
 
-		clmId.setCellValueFactory(new PropertyValueFactory<Reservas, String>("id"));
-		clmFecha.setCellValueFactory(new PropertyValueFactory<Reservas, String>("fechaReserva"));
-		clmNum.setCellValueFactory(new PropertyValueFactory<Reservas, String>("numProfesionistas"));
-		clmHabilidad.setCellValueFactory(new PropertyValueFactory<Reservas, String>("habilidad"));
+			clmId.setCellValueFactory(new PropertyValueFactory<Reservas, String>("id"));
+			clmFecha.setCellValueFactory(new PropertyValueFactory<Reservas, String>("fechaReserva"));
+			clmNum.setCellValueFactory(new PropertyValueFactory<Reservas, String>("numProfesionistas"));
+			clmHabilidad.setCellValueFactory(new PropertyValueFactory<Reservas, String>("habilidad"));
+
+			rellenarComboBox();
 		
-		rellenarComboBox();
 	}
 
 	private void rellenarComboBox() {
