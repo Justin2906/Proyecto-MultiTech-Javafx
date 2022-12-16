@@ -64,10 +64,21 @@ public class RegistrarController {
 			contrasenasBien.setVisible(true);
 		} else if (conexionBD.consultarEmailBd(txtCorreo.getText()) == true) {
 			correoBdExiste.setVisible(true);
+		} else if (boxTipoCliente.getValue().equals("")) {
+			mostrarAlertInfo(event, "debe rellenar el campo cliente");
+		} else if (boxCompetencias.getValue().equals("")) {
+			mostrarAlertInfo(event, "debe rellenar el campo de habilidades");
 		} else {
-			conexionBD.insertarRegistro(txtNombre.getText().toLowerCase(), txtCorreo.getText().toLowerCase(),
-					txtContrasena.getText().toLowerCase());
-			App.setRoot("login");
+			if (boxTipoCliente.getValue().equals("Profesionista")) {
+				conexionBD.insertarRegistro(txtNombre.getText().toLowerCase(), txtCorreo.getText().toLowerCase(),
+						txtContrasena.getText().toLowerCase(), boxTipoCliente.getValue(), boxCompetencias.getValue());
+				App.setRoot("login");
+			} else {
+				conexionBD.insertarRegistro(txtNombre.getText().toLowerCase(), txtCorreo.getText().toLowerCase(),
+						txtContrasena.getText().toLowerCase(), boxTipoCliente.getValue(), null);
+				App.setRoot("login");
+			}
+
 		}
 
 	}
@@ -75,6 +86,15 @@ public class RegistrarController {
 	@FXML
 	void logearse(ActionEvent event) throws IOException {
 		App.setRoot("login");
+	}
+
+	@FXML
+	void dependencia(ActionEvent event) {
+		if (boxTipoCliente.getValue().equals("Profesionista")) {
+			boxCompetencias.setVisible(true);
+		} else {
+			boxCompetencias.setVisible(false);
+		}
 	}
 
 	public void initialize() {
@@ -87,13 +107,12 @@ public class RegistrarController {
 				"Diseñador de Vestuario", "Ebanista");
 	}
 	
-	@FXML
-    void dependencia(ActionEvent event) {
-		if (boxTipoCliente.getValue().equals("Profesionista")) {
-			boxCompetencias.setVisible(true);
-		}else {
-			boxCompetencias.setVisible(false);
-		}
-    }
+	private void mostrarAlertInfo(ActionEvent event, String texto) {
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setHeaderText(null);
+		alert.setTitle("ALERTA!!");
+		alert.setContentText(texto);
+		alert.showAndWait();
+	}
 
 }

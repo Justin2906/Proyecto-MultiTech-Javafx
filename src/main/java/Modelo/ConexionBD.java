@@ -44,7 +44,7 @@ public class ConexionBD {
 		}
 	}
 
-	public void insertarRegistro(String nombre, String email, String contrasena) {
+	public void insertarRegistro(String nombre, String email, String contrasena, String tipoCliente, String habilidad) {
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs;
@@ -59,8 +59,14 @@ public class ConexionBD {
 
 			sentenciaSQL = conexion.createStatement();
 
-			sql = "insert into cliente (id,Nombre,Email,Contraseña) values (0,'" + nombre + "','" + email + "','"
+			if (tipoCliente.equals("Profesionista")) {
+				sql = "insert into profesionista (id,Nombre,Email,Contrasena,Habilidad) values (0,'" + nombre + "','" + email + "','"
+						+ contrasena  + "','" + habilidad + "')";
+			}else{
+				sql = "insert into cliente (id,Nombre,Email,Contraseña) values (0,'" + nombre + "','" + email + "','"
 					+ contrasena + "')";
+			}
+			
 
 			resultado = sentenciaSQL.executeUpdate(sql);
 

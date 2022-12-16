@@ -56,7 +56,7 @@ public class LoginController {
 					txtContrasena.getText());
 			App.setRoot("inicio");
 		}
-
 	}
+
 
 }

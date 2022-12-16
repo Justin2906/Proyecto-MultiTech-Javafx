@@ -19,6 +19,9 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -29,6 +32,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class ReservasController {
 
@@ -128,13 +132,21 @@ public class ReservasController {
 	}
 
 	@FXML
-	void search(ActionEvent event) {
-
-	}
-
-	@FXML
 	void goback(ActionEvent event) throws IOException {
-		App.setRoot("inicio");
+		Stage nuevaStage = new Stage();
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
+			// Establecemos el t�tulo de la ventana
+			nuevaStage.setTitle("Pagina Principal - ShowSkills");
+			// Establecemos el ancho y el alto
+			nuevaStage.setScene(new Scene(root));
+			// Mostramos la ventana
+			nuevaStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		cerrarVentana(gb);
 	}
 
 	public void initialize() {
@@ -204,6 +216,11 @@ public class ReservasController {
 		boxHabilidadesUp.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas",
 				"Diseñador de Vestuario", "Ebanista");
 
+	}
+	
+	private void cerrarVentana(Button boton) {
+		Stage stage = (Stage) boton.getScene().getWindow();
+		stage.close();
 	}
 
 }
