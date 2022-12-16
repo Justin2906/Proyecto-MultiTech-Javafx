@@ -34,7 +34,7 @@ public class LoginController {
 
 	@FXML
 	private Button btnEntrar;
-	
+
 	public static DatosUsuario usuarioLogueado;
 
 	@FXML
@@ -50,7 +50,7 @@ public class LoginController {
 			emailIncorrecto.setVisible(true);
 		} else if (conexionBD.consultarContrasenaBd(txtEmail.getText(), txtContrasena.getText()) == false) {
 			pswdIncorrecta.setVisible(true);
-			
+
 		} else {
 			usuarioLogueado = new DatosUsuario(conexionBD.consultarIdUsuario(txtEmail.getText()), txtEmail.getText(),
 					txtContrasena.getText());

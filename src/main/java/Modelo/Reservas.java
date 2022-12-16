@@ -63,7 +63,7 @@ public class Reservas {
 		
 		try {
 			Statement instruccion = conexionBD.conectar().createStatement();
-			sql = "select id, Fecha_Reserva, Num_profesionistas, Habilidad_Requerida from reservas where id = " + conexionBD.consultarIdUsuario(LoginController.usuarioLogueado.getCorreo()) ;
+			sql = "select id, Fecha_Reserva, Num_profesionistas, Habilidad_Requerida from reservas where ref_cliente = " + LoginController.usuarioLogueado.getId();
 			ResultSet resultado = instruccion.executeQuery(sql);
 
 			while (resultado.next()) {

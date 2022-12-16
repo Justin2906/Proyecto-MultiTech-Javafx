@@ -74,5 +74,6 @@
             <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Label>
+      <Button fx:id="btnCerrarSesion" layoutX="75.0" layoutY="38.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="35.0" prefWidth="99.0" text="Cerrar Sesión" />
    </children>
 </AnchorPane>

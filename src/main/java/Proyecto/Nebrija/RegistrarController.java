@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -46,6 +47,12 @@ public class RegistrarController {
 	private Button btnEntrar;
 
 	@FXML
+	private ComboBox<String> boxTipoCliente;
+
+	@FXML
+	private ComboBox<String> boxCompetencias;
+
+	@FXML
 	void registrarse(ActionEvent event) throws IOException {
 		ConexionBD conexionBD = new ConexionBD();
 
@@ -70,12 +77,23 @@ public class RegistrarController {
 		App.setRoot("login");
 	}
 
-	private void mostrarAlertInfo(ActionEvent event, String texto) {
-		Alert alert = new Alert(Alert.AlertType.INFORMATION);
-		alert.setHeaderText(null);
-		alert.setTitle("ALERTA!!");
-		alert.setContentText(texto);
-		alert.showAndWait();
+	public void initialize() {
+		rellenarComboBox();
 	}
+
+	private void rellenarComboBox() {
+		boxTipoCliente.getItems().addAll("Profesionista", "Cliente");
+		boxCompetencias.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas",
+				"Diseñador de Vestuario", "Ebanista");
+	}
+	
+	@FXML
+    void dependencia(ActionEvent event) {
+		if (boxTipoCliente.getValue().equals("Profesionista")) {
+			boxCompetencias.setVisible(true);
+		}else {
+			boxCompetencias.setVisible(false);
+		}
+    }
 
 }

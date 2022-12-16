@@ -66,7 +66,7 @@
                   <Font name="Franklin Gothic Medium" size="20.0" />
                </font>
             </Label>
-            <ComboBox layoutX="367.0" layoutY="518.0" prefHeight="35.0" prefWidth="296.0" promptText="Elija sus competencias" style="-fx-background-color: white;" />
+            <ComboBox fx:id="boxCompetencias" layoutX="499.0" layoutY="518.0" prefHeight="35.0" prefWidth="166.0" promptText="Elija sus competencias" style="-fx-background-color: white;" visible="false" />
             <Label fx:id="nombreBien" layoutX="430.0" layoutY="259.0" prefHeight="23.0" prefWidth="185.0" text="Debe introducir un nombre" textAlignment="CENTER" textFill="#bf1712" visible="false">
                <font>
                   <Font name="Franklin Gothic Medium" size="16.0" />
@@ -87,6 +87,7 @@
                   <Font name="Franklin Gothic Medium" size="16.0" />
                </font>
             </Label>
+            <ComboBox fx:id="boxTipoCliente" layoutX="370.0" layoutY="518.0" onAction="#dependencia" prefHeight="35.0" prefWidth="120.0" promptText="Usuario..." style="-fx-background-color: white;" />
          </children>
       </Pane>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="446.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">

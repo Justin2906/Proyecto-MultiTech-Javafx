@@ -212,7 +212,7 @@ public class ConexionBD {
 
 	}
 
-	public boolean insertarReserva(String fecha_Reserva, String num_Profes, String habilidad, int id_Cliente) {
+	public boolean insertarReserva(String fecha_Reserva, String num_Profes, String habilidad, int ref_cliente) {
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs;
@@ -228,8 +228,8 @@ public class ConexionBD {
 
 			sentenciaSQL = conexion.createStatement();
 
-			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida, id_Cliente) values (0,'"
-					+ fecha_Reserva + "','" + num_Profes + "','" + habilidad + "','" + id_Cliente + "')";
+			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida, ref_cliente) values (0,'"
+					+ fecha_Reserva + "','" + num_Profes + "','" + habilidad + "','" + ref_cliente + "')";
 
 			resultado = sentenciaSQL.executeUpdate(sql);
 

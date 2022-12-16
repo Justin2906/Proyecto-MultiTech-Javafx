@@ -20,11 +20,6 @@
       <Pane layoutX="293.0" layoutY="163.0" opacity="0.52" prefHeight="449.0" prefWidth="454.0" style="-fx-background-color: lightgray; -fx-background-radius: 60px;" />
       <Pane layoutX="-1.0" layoutY="1.0" prefHeight="774.0" prefWidth="1039.0">
          <children>
-            <Label layoutX="418.0" layoutY="551.0" prefHeight="30.0" prefWidth="196.0" text="Recuperar contraseña" textFill="#003580">
-               <font>
-                  <Font name="Franklin Gothic Medium" size="20.0" />
-               </font>
-            </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="441.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Images/usuario.png" />

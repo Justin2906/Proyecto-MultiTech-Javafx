@@ -58,18 +58,22 @@ public class InicioController {
 	@FXML
 	private TextField txtNumProfes;
 
+	@FXML
+	private Button btnCerrarSesion;
+
 	private ObservableList<Reservas> lista;
 
 	@FXML
 	void reservar(ActionEvent event) throws IOException {
 		ConexionBD conexionBD = new ConexionBD();
 		String fecha = txtFechaReserva.getValue().toString();
-		//LoginController login  = new LoginController();
+		// LoginController login = new LoginController();
 
 		if (txtFechaReserva.getValue() == null || txtNumProfes.getText().isEmpty()
 				|| boxHabilidades.getValue() == null) {
 			camposIncompletos.setVisible(true);
-		} else if (conexionBD.insertarReserva(fecha, txtNumProfes.getText(), boxHabilidades.getValue(), LoginController.usuarioLogueado.getId()) == true) {
+		} else if (conexionBD.insertarReserva(fecha, txtNumProfes.getText(), boxHabilidades.getValue(),
+				LoginController.usuarioLogueado.getId()) == true) {
 			insertBien.setVisible(true);
 		} else {
 			insertMal.setVisible(true);
@@ -92,6 +96,11 @@ public class InicioController {
 		App.setRoot("misReservas");
 	}
 
+	@FXML
+	void cerrarSesion(ActionEvent event) throws IOException {
+		App.setRoot("login");
+	}
+
 	// relleno el combobox a pelo para comprobar funcionalidad IMPORTANTE: borrar
 	// luegop y rellenar con datos de la base de datos
 	public void initialize() {
@@ -101,7 +110,6 @@ public class InicioController {
 	private void rellenarComboBox() {
 		boxHabilidades.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas",
 				"Diseñador de Vestuario", "Ebanista");
-
 	}
 
 }
