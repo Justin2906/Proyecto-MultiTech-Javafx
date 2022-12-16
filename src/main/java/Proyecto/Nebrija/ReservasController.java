@@ -147,7 +147,7 @@ public class ReservasController {
 
 		// añado los elementos de 'lista' al tableView
 		lista = FXCollections.observableArrayList();
-		Reservas.llenarInformacionReservas(conexionBD.conectar(), lista);
+		Reservas.llenarInformacionReservas(lista);
 		listaReservas.setItems(lista);
 
 		// añado los elementos de cada registro en sus respectivas columnas

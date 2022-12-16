@@ -2,6 +2,7 @@ package Proyecto.Nebrija;
 
 import java.io.IOException;
 import Modelo.ConexionBD;
+import Modelo.DatosUsuario;
 import Modelo.Reservas;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -60,14 +61,15 @@ public class InicioController {
 	private ObservableList<Reservas> lista;
 
 	@FXML
-	void reservar(ActionEvent event) {
+	void reservar(ActionEvent event) throws IOException {
 		ConexionBD conexionBD = new ConexionBD();
 		String fecha = txtFechaReserva.getValue().toString();
+		//LoginController login  = new LoginController();
 
 		if (txtFechaReserva.getValue() == null || txtNumProfes.getText().isEmpty()
 				|| boxHabilidades.getValue() == null) {
 			camposIncompletos.setVisible(true);
-		} else if (conexionBD.insertarReserva(fecha, txtNumProfes.getText(), boxHabilidades.getValue()) == true) {
+		} else if (conexionBD.insertarReserva(fecha, txtNumProfes.getText(), boxHabilidades.getValue(), LoginController.usuarioLogueado.getId()) == true) {
 			insertBien.setVisible(true);
 		} else {
 			insertMal.setVisible(true);

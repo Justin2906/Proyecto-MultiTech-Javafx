@@ -40,21 +40,15 @@
          </font>
       </TextField>
       <DatePicker fx:id="txtFechaReservaUp" layoutX="162.0" layoutY="560.0" prefHeight="43.0" prefWidth="246.0" promptText="Fecha para realizar el trabajo" />
-      <Button fx:id="btnUpdate" layoutX="338.0" layoutY="620.0" mnemonicParsing="false" onAction="#update" prefHeight="43.0" prefWidth="90.0" style="-fx-background-color: white;" text="Modificar" />
-      <Button fx:id="btnDelete" layoutX="483.0" layoutY="620.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="77.0" style="-fx-background-color: white;" text="Eliminar" />
-      <Button fx:id="btnSearch" layoutX="614.0" layoutY="620.0" mnemonicParsing="false" onAction="#search" prefHeight="43.0" prefWidth="77.0" style="-fx-background-color: white;" text="Buscar" />
-      <Label fx:id="mensajeDelete" layoutX="235.0" layoutY="320.0" prefHeight="30.0" prefWidth="573.0" text="Debe seleccionar una reserva para poder realizar cualquier acción" textAlignment="CENTER" textFill="#bf1712">
-         <font>
-            <Font name="Franklin Gothic Medium" size="20.0" />
-         </font>
-      </Label>
+      <Button fx:id="btnUpdate" layoutX="365.0" layoutY="625.0" mnemonicParsing="false" onAction="#update" prefHeight="43.0" prefWidth="124.0" style="-fx-background-color: white;" text="Modificar" />
+      <Button fx:id="btnDelete" layoutX="544.0" layoutY="625.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="124.0" style="-fx-background-color: white;" text="Eliminar" />
       <Button fx:id="gb" layoutX="62.0" layoutY="45.0" mnemonicParsing="false" onAction="#goback" prefHeight="43.0" prefWidth="62.0" text="Volver" />
       <TextField fx:id="txtIdUp" layoutX="432.0" layoutY="703.0" prefHeight="43.0" prefWidth="199.0" visible="false">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="busqueda" layoutX="432.0" layoutY="695.0" prefHeight="43.0" prefWidth="199.0" promptText="¿Cuantos Profesionistas?">
+      <TextField fx:id="busqueda" alignment="CENTER" layoutX="356.0" layoutY="320.0" prefHeight="29.0" prefWidth="317.0" promptText="Buscar...">
          <font>
             <Font size="16.0" />
          </font>

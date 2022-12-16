@@ -180,6 +180,7 @@ public class ConexionBD {
 				if (rs.getString("Contraseña").equals(contrasena)) {
 					encontrado = true;
 					System.out.println("las contraseñas coinciden");
+					
 				} else {
 					encontrado = false;
 				}
@@ -212,7 +213,7 @@ public class ConexionBD {
 
 	}
 
-	public boolean insertarReserva(String fecha_Reserva, String num_Profes, String habilidad) {
+	public boolean insertarReserva(String fecha_Reserva, String num_Profes, String habilidad, int id_Cliente) {
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs;
@@ -228,8 +229,8 @@ public class ConexionBD {
 
 			sentenciaSQL = conexion.createStatement();
 
-			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida) values (0,'"
-					+ fecha_Reserva + "','" + num_Profes + "','" + habilidad + "')";
+			sql = "insert into reservas (id,Fecha_Reserva,Num_profesionistas,Habilidad_Requerida, id_Cliente) values (0,'"
+					+ fecha_Reserva + "','" + num_Profes + "','" + habilidad + "','" + id_Cliente + "')";
 
 			resultado = sentenciaSQL.executeUpdate(sql);
 
@@ -263,6 +264,56 @@ public class ConexionBD {
 		} else {
 			return false;
 		}
+	}
+	
+	public int consultarIdUsuario(String correo) {
+
+		Connection conexion = null;
+		Statement sentenciaSQL = null;
+		ResultSet rs = null;
+		String query = "";
+		int id = 0;
+
+		boolean encontrado = false;
+
+		try {
+
+			Class.forName(driver);
+			conexion = DriverManager.getConnection(url + bd, user, password);
+
+			sentenciaSQL = conexion.createStatement();
+
+			query = "SELECT id FROM cliente WHERE Email = '" + correo + "';";
+
+			rs = sentenciaSQL.executeQuery(query);
+
+			// chequeo que el result set no sea vac�o, moviendo el cursor a la
+			// primer fila. (El cursor inicia antes de la primer fila)
+
+			while (rs.next()) {
+				id = rs.getInt("id");
+			}
+
+		} catch (SQLException | ClassNotFoundException ex) {
+			ex.printStackTrace();
+			// System.out.println("Error");
+		} finally {
+			try {
+				if (sentenciaSQL != null) {
+					sentenciaSQL.close();
+				}
+				if (conexion != null) {
+					conexion.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+		return id;
+
 	}
 
 }

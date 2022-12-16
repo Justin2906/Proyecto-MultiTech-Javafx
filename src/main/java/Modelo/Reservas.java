@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import Proyecto.Nebrija.LoginController;
+
 import java.sql.ResultSet;
 import javafx.collections.ObservableList;
 
@@ -54,11 +57,13 @@ public class Reservas {
 		this.habilidad = habilidad;
 	}
 
-	public static void llenarInformacionReservas(Connection connection, ObservableList<Reservas> lista) {
+	public static void llenarInformacionReservas(ObservableList<Reservas> lista) {
 		String sql = "";
+		ConexionBD conexionBD = new ConexionBD();
+		
 		try {
-			Statement instruccion = connection.createStatement();
-			sql = "select id, Fecha_Reserva, Num_profesionistas, Habilidad_Requerida from reservas";
+			Statement instruccion = conexionBD.conectar().createStatement();
+			sql = "select id, Fecha_Reserva, Num_profesionistas, Habilidad_Requerida from reservas where id = " + conexionBD.consultarIdUsuario(LoginController.usuarioLogueado.getCorreo()) ;
 			ResultSet resultado = instruccion.executeQuery(sql);
 
 			while (resultado.next()) {
