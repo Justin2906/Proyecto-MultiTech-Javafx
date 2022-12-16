@@ -150,7 +150,6 @@ public class ConexionBD {
 	}
 
 	public boolean consultarContrasenaBd(String correo, String contrasena) {
-
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
 		ResultSet rs = null;
