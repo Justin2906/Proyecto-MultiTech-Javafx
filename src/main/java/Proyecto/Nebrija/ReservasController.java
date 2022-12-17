@@ -133,20 +133,7 @@ public class ReservasController {
 
 	@FXML
 	void goback(ActionEvent event) throws IOException {
-		Stage nuevaStage = new Stage();
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
-			// Establecemos el t�tulo de la ventana
-			nuevaStage.setTitle("Pagina Principal - ShowSkills");
-			// Establecemos el ancho y el alto
-			nuevaStage.setScene(new Scene(root));
-			// Mostramos la ventana
-			nuevaStage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		cerrarVentana(gb);
+		App.setRoot("inicio");
 	}
 
 	public void initialize() {
@@ -216,11 +203,6 @@ public class ReservasController {
 		boxHabilidadesUp.getItems().addAll("Pintor y Decorador", "Tapicero", "Diseñador de Joyas",
 				"Diseñador de Vestuario", "Ebanista");
 
-	}
-	
-	private void cerrarVentana(Button boton) {
-		Stage stage = (Stage) boton.getScene().getWindow();
-		stage.close();
 	}
 
 }

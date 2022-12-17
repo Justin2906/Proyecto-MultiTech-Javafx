@@ -20,7 +20,7 @@
             <Image url="@../../Images/logo.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="115.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui apareceran las reservas que tiene activas" textAlignment="CENTER" wrappingWidth="802.3623046875">
+      <Text fill="WHITE" layoutX="115.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aquí apareceran las reservas que tiene activas" textAlignment="CENTER" wrappingWidth="802.3623046875">
          <font>
             <Font name="Franklin Gothic Medium" size="50.0" />
          </font>
@@ -34,7 +34,7 @@
         </columns>
       </TableView>
       <ComboBox fx:id="boxHabilidadesUp" layoutX="656.0" layoutY="560.0" prefHeight="43.0" prefWidth="217.0" promptText="Seleccione una habilidad" style="-fx-background-color: white;" />
-      <TextField fx:id="txtNumProfesUp" layoutX="432.0" layoutY="560.0" prefHeight="43.0" prefWidth="199.0" promptText="¿Cuantos Profesionistas?">
+      <TextField fx:id="txtNumProfesUp" layoutX="432.0" layoutY="560.0" prefHeight="43.0" prefWidth="199.0" promptText="¿Cuántos Profesionistas?">
          <font>
             <Font size="16.0" />
          </font>

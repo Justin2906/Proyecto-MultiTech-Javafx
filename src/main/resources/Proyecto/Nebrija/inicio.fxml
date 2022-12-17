@@ -29,7 +29,7 @@
          </font>
       </Text>
       <DatePicker fx:id="txtFechaReserva" editable="false" layoutX="75.0" layoutY="662.0" prefHeight="43.0" prefWidth="242.0" promptText="Fecha para realizar el trabajo" />
-      <TextField fx:id="txtNumProfes" layoutX="616.0" layoutY="662.0" prefHeight="43.0" prefWidth="223.0" promptText="¿Cuantos Profesionistas?">
+      <TextField fx:id="txtNumProfes" layoutX="616.0" layoutY="662.0" prefHeight="43.0" prefWidth="223.0" promptText="¿Cuántos Profesionistas?">
          <font>
             <Font size="16.0" />
          </font>

@@ -87,78 +87,24 @@ public class InicioController {
 
 	@FXML
 	void misDatos(ActionEvent event) throws IOException {
-		Stage nuevaStage = new Stage();
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("profile.fxml"));
-			// Establecemos el t�tulo de la ventana
-			nuevaStage.setTitle("Mis datos - ShowSkills");
-			// Establecemos el ancho y el alto
-			nuevaStage.setScene(new Scene(root));
-			// Mostramos la ventana
-			nuevaStage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		cerrarVentana(btnDatosPersonales);
+		App.setRoot("profile");
 	}
 
 	@FXML
 	void serviciosOfrecidos(ActionEvent event) throws IOException {
-		Stage nuevaStage = new Stage();
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("services.fxml"));
-			// Establecemos el t�tulo de la ventana
-			nuevaStage.setTitle("Servicios - ShowSkills");
-			// Establecemos el ancho y el alto
-			nuevaStage.setScene(new Scene(root));
-			// Mostramos la ventana
-			nuevaStage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		cerrarVentana(btnServicios);;
+		App.setRoot("services");
 	}
 
 	@FXML
 	void misReservas(ActionEvent event) throws IOException {
-		Stage nuevaStage = new Stage();
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("misReservas.fxml"));
-			// Establecemos el t�tulo de la ventana
-			nuevaStage.setTitle("Mis Reservas - ShowSkills");
-			// Establecemos el ancho y el alto
-			nuevaStage.setScene(new Scene(root));
-			// Mostramos la ventana
-			nuevaStage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		cerrarVentana(btnReservas);
+		App.setRoot("misReservas");
 	}
 
 	@FXML
 	void cerrarSesion(ActionEvent event) throws IOException {
-		Stage nuevaStage = new Stage();
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("login.fxml"));
-			// Establecemos el t�tulo de la ventana
-			nuevaStage.setTitle("Login - ShowSkills");
-			// Establecemos el ancho y el alto
-			nuevaStage.setScene(new Scene(root));
-			// Mostramos la ventana
-			nuevaStage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		cerrarVentana(btnCerrarSesion);
+		App.setRoot("Login");
 	}
 
-	// relleno el combobox a pelo para comprobar funcionalidad IMPORTANTE: borrar
-	// luegop y rellenar con datos de la base de datos
 	public void initialize() {
 		rellenarComboBox();
 	}

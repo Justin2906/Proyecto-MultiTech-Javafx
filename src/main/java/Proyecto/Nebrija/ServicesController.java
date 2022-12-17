@@ -17,25 +17,7 @@ public class ServicesController {
 
 	@FXML
 	void goback(ActionEvent event) throws IOException {
-		Stage nuevaStage = new Stage();
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
-			// Establecemos el t�tulo de la ventana
-			nuevaStage.setTitle("Pagina Principal - ShowSkills");
-			// Establecemos el ancho y el alto
-			nuevaStage.setScene(new Scene(root));
-			// Mostramos la ventana
-			nuevaStage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		cerrarVentana(gb);
+		App.setRoot("inicio");
 	}
-
-	private void cerrarVentana(Button boton) {
-		Stage stage = (Stage) boton.getScene().getWindow();
-		stage.close();
-	}
-
+ 
 }
