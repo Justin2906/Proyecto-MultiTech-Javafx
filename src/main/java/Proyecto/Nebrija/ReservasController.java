@@ -88,8 +88,6 @@ public class ReservasController {
 	@FXML
 	private TextField busqueda;
 
-	private ConexionBD conexionBD = new ConexionBD();
-
 	@FXML
 	void getItem() {
 		listaReservas.onMouseClickedProperty().set(event -> {

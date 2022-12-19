@@ -17,7 +17,7 @@
             <Image url="@../../Images/fondo.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="68.0" layoutY="289.0" opacity="0.52" prefHeight="288.0" prefWidth="902.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px;" />
+      <Pane layoutX="225.0" layoutY="289.0" opacity="0.52" prefHeight="288.0" prefWidth="579.0" style="-fx-background-color: lightgray; -fx-background-radius: 40px;" />
       <ImageView fx:id="imgViewLogo" fitHeight="119.0" fitWidth="194.0" layoutX="450.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/logo.png" />
@@ -35,14 +35,9 @@
          </font>
       </TextField>
       <Button fx:id="btnResevar" layoutX="872.0" layoutY="662.0" mnemonicParsing="false" onAction="#reservar" prefHeight="43.0" prefWidth="77.0" text="Reservar" />
-      <ImageView fx:id="imgViewCalendar" fitHeight="198.0" fitWidth="224.0" layoutX="90.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgViewCalendar" fitHeight="198.0" fitWidth="224.0" layoutX="248.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/calendario.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imgViewDatos" fitHeight="208.0" fitWidth="207.0" layoutX="744.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Images/datos%20personales.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="248.0" layoutY="637.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Realiza una nueva reserva">
@@ -50,16 +45,15 @@
             <Font name="Franklin Gothic Medium" size="50.0" />
          </font>
       </Text>
-      <ImageView fx:id="imgViewServices" fitHeight="207.0" fitWidth="198.0" layoutX="425.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgViewServices" fitHeight="207.0" fitWidth="198.0" layoutX="583.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/servicios.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnDatosPersonales" layoutX="768.0" layoutY="523.0" mnemonicParsing="false" onAction="#misDatos" prefHeight="35.0" prefWidth="160.0" text="Mis Datos " />
-      <Button fx:id="btnServicios" layoutX="439.0" layoutY="523.0" mnemonicParsing="false" onAction="#serviciosOfrecidos" prefHeight="35.0" prefWidth="160.0" text="Servicios Ofrecidos" />
-      <Button fx:id="btnReservas" layoutX="101.0" layoutY="523.0" mnemonicParsing="false" onAction="#misReservas" prefHeight="35.0" prefWidth="160.0" text="Mis Reservas" />
+      <Button fx:id="btnServicios" layoutX="597.0" layoutY="527.0" mnemonicParsing="false" onAction="#serviciosOfrecidos" prefHeight="35.0" prefWidth="160.0" text="Servicios Ofrecidos" />
+      <Button fx:id="btnReservas" layoutX="259.0" layoutY="527.0" mnemonicParsing="false" onAction="#misReservas" prefHeight="35.0" prefWidth="160.0" text="Mis Reservas" />
       <ComboBox fx:id="boxHabilidades" layoutX="360.0" layoutY="662.0" prefHeight="43.0" prefWidth="223.0" promptText="Seleccione una habilidad" style="-fx-background-color: white;" />
-      <Label fx:id="camposIncompletos" layoutX="272.0" layoutY="705.0" prefHeight="30.0" prefWidth="494.0" text="Debe rellenar todos los campos para realizar una reserva" textAlignment="CENTER" textFill="#bf1712" visible="false">
+      <Label fx:id="camposIncompletos" layoutX="272.0" layoutY="713.0" prefHeight="30.0" prefWidth="494.0" text="Debe rellenar todos los campos para realizar una reserva" textAlignment="CENTER" textFill="#bf1712" visible="false">
          <font>
             <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
