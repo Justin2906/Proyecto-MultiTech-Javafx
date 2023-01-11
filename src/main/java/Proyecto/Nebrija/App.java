@@ -17,11 +17,15 @@ public class App extends Application {
 	private static Scene scene;
 
 	@Override
-	public void start(Stage stage) throws IOException {
+	public void start(Stage stage) {
 		ConexionBD conexionBD = new ConexionBD();
 		conexionBD.conectar();
 
-		scene = new Scene(loadFXML("login"));
+		try {
+			scene = new Scene(loadFXML("login"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		stage.setScene(scene);
 		stage.setMaxWidth(1039);
 		stage.setMaxHeight(774);

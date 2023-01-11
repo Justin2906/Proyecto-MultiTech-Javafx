@@ -61,7 +61,7 @@ public class InicioController {
 	private Button btnCerrarSesion;
 
 	@FXML
-	void reservar(ActionEvent event) throws IOException {
+	void reservar(ActionEvent event){
 		ConexionBD conexionBD = new ConexionBD();
 		LocalDate fecha = txtFechaReserva.getValue();
 		
@@ -75,25 +75,35 @@ public class InicioController {
 		}
 
 	}
-
+	
 	@FXML
-	void misDatos(ActionEvent event) throws IOException {
-		App.setRoot("profile");
+	void serviciosOfrecidos(ActionEvent event) {
+		try {
+			App.setRoot("services");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
-	void serviciosOfrecidos(ActionEvent event) throws IOException {
-		App.setRoot("services");
+	void misReservas(ActionEvent event){
+		try {
+			App.setRoot("misReservas");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
-	void misReservas(ActionEvent event) throws IOException {
-		App.setRoot("misReservas");
-	}
-
-	@FXML
-	void cerrarSesion(ActionEvent event) throws IOException {
-		App.setRoot("Login");
+	void cerrarSesion(ActionEvent event){
+		try {
+			App.setRoot("Login");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void initialize() {

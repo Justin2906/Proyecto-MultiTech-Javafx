@@ -22,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -64,9 +65,7 @@ public class ReservasController {
 	private TextField txtNumProfesUp;
 
 	private ObservableList<Reservas> lista;
-
-	private ObservableList<Reservas> listaAux;
-
+  
 	@FXML
 	private TableColumn<Reservas, String> clmHabilidad;
 
@@ -202,5 +201,7 @@ public class ReservasController {
 				"Diseñador de Vestuario", "Ebanista");
 
 	}
+	
+	
 
 }

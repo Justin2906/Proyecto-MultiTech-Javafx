@@ -53,10 +53,12 @@ public class RegistrarController {
 	private ComboBox<String> boxCompetencias;
 
 	@FXML
-	void registrarse(ActionEvent event) throws IOException {
+	void registrarse(ActionEvent event){
 		ConexionBD conexionBD = new ConexionBD();
 
-		if (txtNombre.getText().isEmpty()) {
+		if (txtNombre.getText().isEmpty() &&  txtCorreo.getText().isEmpty()&& txtCorreo2.getText().isEmpty() && txtContrasena.getText().isEmpty() && txtContrasena2.getText().isEmpty() && boxTipoCliente.getSelectionModel().isEmpty()) {
+			mostrarAlertInfo(event, "Debe rellenar todos los campos");
+		}else if (txtNombre.getText().isEmpty()) {
 			nombreBien.setVisible(true);
 		} else if (!txtCorreo.getText().equals(txtCorreo2.getText())) {
 			emailsBien.setVisible(true);
@@ -66,17 +68,25 @@ public class RegistrarController {
 			correoBdExiste.setVisible(true);
 		} else if (boxTipoCliente.getValue().equals("")) {
 			mostrarAlertInfo(event, "debe rellenar el campo cliente");
-		} else if (boxCompetencias.getValue().equals("")) {
+		} else if (boxCompetencias.getSelectionModel().isEmpty()) {
 			mostrarAlertInfo(event, "debe rellenar el campo de habilidades");
 		} else {
 			if (boxTipoCliente.getValue().equals("Profesionista")) {
 				conexionBD.insertarRegistro(txtNombre.getText().toLowerCase(), txtCorreo.getText().toLowerCase(),
 						txtContrasena.getText().toLowerCase(), boxTipoCliente.getValue(), boxCompetencias.getValue());
-				App.setRoot("login");
+				try {
+					App.setRoot("login");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			} else {
 				conexionBD.insertarRegistro(txtNombre.getText().toLowerCase(), txtCorreo.getText().toLowerCase(),
 						txtContrasena.getText().toLowerCase(), boxTipoCliente.getValue(), null);
-				App.setRoot("login");
+				try {
+					App.setRoot("login");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 
 		}
